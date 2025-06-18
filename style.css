@@ -1,0 +1,233 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background: #f8f9fc;
+  color: #1c1e23;
+}
+
+/* HEADER */
+.site-header {
+  background: #fff;
+  padding: 32px;
+}
+.branding {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+#dpi-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #eaf4ec;
+  object-fit: contain;
+}
+.underline h1 {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #1c3272;
+  display: inline-block;
+  padding-bottom: 3px;
+  border-bottom: 2.5px solid #bae6c4;
+}
+
+/* TOP CONTROLS */
+.top-controls {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 18px 32px 0;
+  background: #fff;
+  border-bottom: 1.5px solid #e4e8ef;
+}
+#toggle-filters {
+  border: none;
+  background: #f3f3f3;
+  font-size: 1.1rem;
+  padding: 8px 18px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background .15s;
+}
+#toggle-filters:hover {
+  background: #e3f5e9;
+}
+.category-tabs {
+  display: flex;
+  gap: 18px;
+}
+.tab {
+  padding: 9px 30px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  background: #eaeefb;
+  color: #374785;
+  cursor: pointer;
+  transition: background .15s;
+}
+.tab.active, .tab:hover {
+  background: #223b6e;
+  color: #fff;
+}
+
+/* LAYOUT */
+.main-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 24px 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* FILTERS */
+.filters-panel {
+  background: #fff;
+  border-radius: 18px;
+  padding: 24px 18px;
+  box-shadow: 0 4px 16px #0001;
+  width: 250px;
+  transition: all .3s;
+}
+.filter-section {
+  margin-bottom: 26px;
+}
+.filters-panel h3 {
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: #1c3272;
+  margin: 10px 0;
+}
+.filters-panel label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 1rem;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+.filters-panel input[type="checkbox"] {
+  accent-color: #36b363;
+  width: 1.1em;
+  height: 1.1em;
+}
+
+/* CARDS – true masonry via columns */
+.cards-grid {
+  display: block;
+  flex: 1;
+  width: 100%;
+
+  /* 3 vertical columns */
+  -webkit-column-count: 3;
+     -moz-column-count: 3;
+          column-count: 3;
+  -webkit-column-gap: 30px;
+     -moz-column-gap: 30px;
+          column-gap: 30px;
+
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.app-card {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 30px;
+
+
+  background: #fff;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 2px 8px #1828481a;
+  transition: box-shadow .2s;
+}
+.app-card:hover {
+  box-shadow: 0 4px 18px #223b6e33;
+}
+.app-card h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #223b6e;
+  margin: 2px 0;
+}
+.app-card img {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #f3f7fa;
+  margin-top: 6px;
+}
+.store-links {
+  display: flex;
+  gap: 9px;
+  margin: 6px 0;
+}
+.store-links button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border: none;
+  background: #eaeefb;
+  color: #223b6e;
+  font-size: .99rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background .15s;
+}
+.store-links button img {
+  width: 19px;
+  height: 19px;
+  object-fit: contain;
+}
+.store-links button:hover {
+  background: #223b6e;
+  color: #fff;
+}
+.description {
+  font-size: 1rem;
+  color: #3c4450;
+  line-height: 1.45;
+  margin-top: 4px;
+}
+
+/* HIDE FILTERS */
+.filters-panel.hide {
+  display: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1080px) {
+  .cards-grid {
+    -webkit-column-count: 2;
+       -moz-column-count: 2;
+            column-count: 2;
+  }
+}
+@media (max-width: 800px) {
+  .main-content {
+    flex-direction: column;
+    padding: 12px;
+  }
+  .filters-panel {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .cards-grid {
+    -webkit-column-count: 1;
+       -moz-column-count: 1;
+            column-count: 1;
+  }
+}
