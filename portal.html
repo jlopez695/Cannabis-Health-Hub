@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <title>Cannabis Health Hub Portal</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="./script.js" defer></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header class="header">
+            <div class="branding">
+                <a href="https://dpi.uillinois.edu/applied-research/cannabis-research-institute/">
+                    <img class="header-logo" src="./images/dpi-cannabis-logo.png" alt="DPI cannabis research institute">
+                </a>   
+                <h1 class="CHH-text">Cannabis Health Hub</h1>
+            </div>
+            <nav>
+                <a class="header-cta" href="./index.html">Home</a>
+                <a class="header-cta" href="./portal.html">Portal</a>
+                <a class="header-cta" href="">FAQ</a>
+                <a class="header-cta" href="">Contact Us</a>
+            </nav>
+        </header>
+
+        <main id="portal-main">
+            <div class="top-controls">
+                <button id="toggle-filters">
+                    Show Filters
+                    <img src="./images/slider-icon.png" alt="slider icon">
+                </button>
+                <select id="sort-menu">
+                    <option value="default">Featured</option>
+                    <option value="name">A → Z</option>
+                    <option value="rating">Highest rated</option>
+                    <option value="reviews">Most reviews</option>
+                </select>
+                <button class="main-filter">Consumer</button>
+                <button class="main-filter">Cultivation</button>
+                <button class="main-filter">Recovery</button>
+            </div>
+            <div class="filters-panel-and-cards">
+                <aside class="filters-panel">
+
+                    <div class="filter-section collapsed">
+                        <h3>Type</h3>
+                        <label><input type="checkbox">App</label>
+                        <label><input type="checkbox">Article</label>
+                        <label><input type="checkbox">Study</label>
+                    </div>
+
+                     <div class="filter-section collapsed">
+                        <h3>Genre</h3>
+                        <label><input type="checkbox">Lifestyle</label>
+                        <label><input type="checkbox">Productivity</label>
+                        <label><input type="checkbox">Health &amp; Fitness</label>
+                        <label><input type="checkbox">Food &amp; Drink</label>
+                        <label><input type="checkbox">News &amp; Magazines</label>
+                        <label><input type="checkbox">Dating</label>
+                    </div>
+
+                    <div class="filter-section collapsed">
+                        <h3>More Filters</h3>
+                        <label><input type="checkbox">Location Based Distillery Information</label>
+                        <label><input type="checkbox">Online Shopping</label>
+                        <label><input type="checkbox">News</label>
+                        <label><input type="checkbox">Law Info</label>
+                        <label><input type="checkbox">Health/Medical Info</label>
+                        <label><input type="checkbox">Product Info/Strain Library</label>
+                        <label><input type="checkbox">Journaling</label>
+                        <label><input type="checkbox">Chatbot</label>
+                        <label><input type="checkbox">Recipe</label>
+                        <label><input type="checkbox">Event</label>
+                        <label><input type="checkbox">Plant Recognition</label>
+                        <label><input type="checkbox">Strain Info</label>
+                        <label><input type="checkbox">Grade/Potency Classification</label>
+                        <label><input type="checkbox">Tracking &amp; Monitoring</label>
+                        <label><input type="checkbox">Community</label>
+                    </div>
+
+                </aside>
+                <section class="cards-grid" id="cards">
+                    
+                </section>
+                
+            </div>
+
+        </main>
+    </body>
+</html>

@@ -1,177 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Cannabis Health Hub</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
-</head>
-<body>
-  <header class="site-header">
-    <div class="branding">
-      <img id="dpi-icon" src="./images/dpi-logo.png" alt="discovery partners institute logo">
-      <div class="underline"><h1>Cannabis Health Hub</h1></div>
-    </div>
-  </header>
+    <head>
+        <title>Cannabis Health Hub Landing Page</title>
+        <link rel="stylesheet" href="styles.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <div class="top-controls">
-    <button id="toggle-filters">
-      Show/Hide Filters
-      <img src="./images/filters-icon.png" alt="slider icon">
-    </button>
-    <div class="category-tabs">
-      <button class="tab active">Consumer</button>
-      <button class="tab">Cultivation</button>
-      <button class="tab">Recovery</button>
-    </div>
-  </div>
-
-  <main class="main-content">
-    <!-- FILTERS -->
-    <aside id="filters" class="filters-panel">
-      <div class="filter-section">
-        <h3>Genre</h3>
-        <label><input type="checkbox"> Lifestyle</label>
-        <label><input type="checkbox"> Productivity</label>
-        <label><input type="checkbox"> Health &amp; Fitness</label>
-        <label><input type="checkbox"> Food &amp; Drink</label>
-        <label><input type="checkbox"> News &amp; Magazines</label>
-        <label><input type="checkbox"> Dating</label>
-      </div>
-      <div class="filter-section">
-        <h3>Type</h3>
-        <label><input type="checkbox"> Article</label>
-        <label><input type="checkbox"> Study</label>
-      </div>
-      <div class="filter-section">
-        <h3>More Filters</h3>
-        <label><input type="checkbox"> Weed Dispensary</label>
-        <label><input type="checkbox"> Online Shopping</label>
-        <label><input type="checkbox"> News</label>
-        <label><input type="checkbox"> Law Info</label>
-        <label><input type="checkbox"> Health/Medical Info</label>
-        <label><input type="checkbox"> Product Info/Strain Library</label>
-        <label><input type="checkbox"> Journaling</label>
-        <label><input type="checkbox"> Chatbot</label>
-        <label><input type="checkbox"> Recipe</label>
-        <label><input type="checkbox"> Plant Recognition</label>
-        <label><input type="checkbox"> Strain Info</label>
-        <label><input type="checkbox"> Grade/Potency Classification</label>
-        <label><input type="checkbox"> Tracking &amp; Monitoring</label>
-        <label><input type="checkbox"> Community</label>
-      </div>
-    </aside>
-
-    <!-- THREE-COLUMN CARDS -->
-    <section class="cards-grid">
-      <div class="column">
-        <article class="app-card">
-          <h2>Weedmaps: Buy Local Weed</h2>
-          <img src="./images/weedmaps-app-icon.webp" alt="Weedmaps app icon">
-          <div class="store-links">
-            <button class="play-store">Play Store <img src="./images/play-store-icon.jpg" alt=""></button>
-            <button class="app-store">App Store <img src="./images/app-store-icon.png" alt=""></button>
-          </div>
-          <p class="description">
-            Weedmaps is a go-to mobile app and web platform for cannabis users to discover and shop local dispensaries and products, while also serving as an essential marketing and operational tool for cannabis retailers and brands.
-          </p>
-        </article>
-        <!-- add more .app-card in column 1 as needed -->
-      </div>
-
-      <div class="column">
-        <article class="app-card">
-          <h2>Leafly: Find Cannabis and CBD</h2>
-          <img src="./images/leafly-logo.png" alt="Leafly app icon">
-          <div class="store-links">
-            <button class="play-store">Play Store <img src="./images/play-store-icon.jpg" alt=""></button>
-            <button class="app-store">App Store <img src="./images/app-store-icon.png" alt=""></button>
-          </div>
-          <p class="description">
-            Leafly is a cannabis information and shopping platform available on mobile and web. It offers a searchable database of cannabis strains, effects, and local dispensaries. Leafly also provides educational content and product ratings to help users make informed decisions.
-          </p>
-        </article>
-        <article class="app-card">
-          <h2>Grow with Jane: Cannabis Plan</h2>
-          <img src="./images/grow-with-jane-icon.png" alt="Grow with Jane app icon">
-          <div class="store-links">
-            <button class="play-store">Play Store <img src="./images/play-store-icon.jpg" alt=""></button>
-            <button class="app-store">App Store <img src="./images/app-store-icon.png" alt=""></button>
-          </div>
-          <p class="description">
-            Grow with Jane is a mobile app and web tool designed for cannabis home growers to track and manage their cultivation process. 
-            It offers personalized grow logs, reminders, and progress tracking while also providing strain info and a private journal.
-            Grow with Jane is a mobile app and web tool designed for cannabis home growers to track and manage their cultivation process. 
-            It offers personalized grow logs, reminders, and progress tracking while also providing strain info and a private journal.
-            Grow with Jane is a mobile app and web tool designed for cannabis home growers to track and manage their cultivation process. 
-            It offers personalized grow logs, reminders, and progress tracking while also providing strain info and a private journal.
-            Grow with Jane is a mobile app and web tool designed for cannabis home growers to track and manage their cultivation process. 
-            It offers personalized grow logs, reminders, and progress tracking while also providing strain info and a private journal.
-          </p>
-        </article>
-        <article class="app-card">
-          <h2>Leafly: Find Cannabis and CBD</h2>
-          <img src="./images/leafly-logo.png" alt="Leafly app icon">
-          <div class="store-links">
-            <button class="play-store">Play Store <img src="./images/play-store-icon.jpg" alt=""></button>
-            <button class="app-store">App Store <img src="./images/app-store-icon.png" alt=""></button>
-          </div>
-          <p class="description">
-            Leafly is a cannabis information and shopping platform available on mobile and web. It offers a searchable database of cannabis strains, effects, and local dispensaries. Leafly also provides educational content and product ratings to help users make informed decisions.
-          </p>
-        </article>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    
+    </head>
+    <body>
+        <header class="header">
+            <div class="branding">
+                <a href="https://dpi.uillinois.edu/applied-research/cannabis-research-institute/">
+                    <img class="header-logo" src="./images/dpi-cannabis-logo.png" alt="DPI cannabis research institute">
+                </a>
+                <h1 class="CHH-text">Cannabis Health Hub</h1>
+            </div>
+            <nav>
+                <a class="header-cta" href="./index.html">Home</a>
+                <a class="header-cta" href="./portal.html">Portal</a>
+                <a class="header-cta" href="">FAQ</a>
+                <a class="header-cta" href="">Contact Us</a>
+            </nav>
+        </header>
         
-        <!-- add more .app-card in column 2 as needed -->
-      </div>
+        <main id="landing-main">
+            <section id="about-section" class="landing-section">
+                <h1 id="about-section-title" class="landing-section-title">About Cannabis Health Hub</h1>
+                <p class="about-section-text landing-section-text">
+                    The Cannabis Digital Health Information Portal is an online 
+                    platform designed to help users explore cannabis-related 
+                    digital technologies. The Portal is designed to help users 
+                    easily find cannabis-related mobile apps based on their 
+                    needs and interests. By organizing and evaluating these 
+                    digital tools, we aim to promote informed decision-making, 
+                    support responsible cannabis use, and contribute to broader 
+                    public health goals. As more individuals turn to mobile 
+                    technologies for health and lifestyle guidance, this portal 
+                    serves as a trusted entry point into the evolving landscape 
+                    of cannabis-related digital resources.
+                </p>
+                <p class="about-section-text landing-section-text">
+                    In its current form, the portal features curated information 
+                    about cannabis-related mobile apps, based on findings from a 
+                    qualitative research study. Over time, it aims to grow into a 
+                    comprehensive resource hub where individuals can discover, 
+                    evaluate, and engage with a wide range of cannabis-related 
+                    digital tools and resources. The portal is affiliated with 
+                    the Cannabis Research Institute and the University of Illinois.
+                </p>
+                <a id="about-cta" href="./portal.html">Go To Portal</a>
+            </section>
 
-      <div class="column">
-        <article class="app-card">
-          <h2>Grow with Jane: Cannabis Plan</h2>
-          <img src="./images/grow-with-jane-icon.png" alt="Grow with Jane app icon">
-          <div class="store-links">
-            <button class="play-store">Play Store <img src="./images/play-store-icon.jpg" alt=""></button>
-            <button class="app-store">App Store <img src="./images/app-store-icon.png" alt=""></button>
-          </div>
-          <p class="description">
-            Grow with Jane is a mobile app and web tool designed for cannabis home growers to track and manage their cultivation process. It offers personalized grow logs, reminders, and progress tracking while also providing strain info and a private journal.
-          </p>
-        </article>
-        <article class="app-card">
-          <h2>Grow with Jane: Cannabis Plan</h2>
-          <img src="./images/grow-with-jane-icon.png" alt="Grow with Jane app icon">
-          <div class="store-links">
-            <button class="play-store">Play Store <img src="./images/play-store-icon.jpg" alt=""></button>
-            <button class="app-store">App Store <img src="./images/app-store-icon.png" alt=""></button>
-          </div>
-          <p class="description">
-            Grow with Jane is a mobile app and web tool designed for cannabis home growers to track and manage their cultivation process. It offers personalized grow logs, reminders, and progress tracking while also providing strain info and a private journal.
-          </p>
-        </article>
-        <article class="app-card">
-          <h2>Grow with Jane: Cannabis Plan</h2>
-          <img src="./images/grow-with-jane-icon.png" alt="Grow with Jane app icon">
-          <div class="store-links">
-            <button class="play-store">Play Store <img src="./images/play-store-icon.jpg" alt=""></button>
-            <button class="app-store">App Store <img src="./images/app-store-icon.png" alt=""></button>
-          </div>
-          <p class="description">
-            Grow with Jane is a mobile app and web tool designed for cannabis home growers to track and manage their cultivation process. It offers personalized grow logs, reminders, and progress tracking while also providing strain info and a private journal.
-          </p>
-        </article>
-        <article class="app-card">
-          <h2>Grow with Jane: Cannabis Plan</h2>
-          <img src="./images/grow-with-jane-icon.png" alt="Grow with Jane app icon">
-          <div class="store-links">
-            <button class="play-store">Play Store <img src="./images/play-store-icon.jpg" alt=""></button>
-            <button class="app-store">App Store <img src="./images/app-store-icon.png" alt=""></button>
-          </div>
-          <p class="description">
-            Grow with Jane is a mobile app and web tool designed for cannabis home growers to track and manage their cultivation process. It offers personalized grow logs, reminders, and progress tracking while also providing strain info and a private journal.
-          </p>
-        </article>
-        <!-- add more .app-card in column 3 as needed -->
-      </div>
-    </section>
-  </main>
-</body>
+
+            <section id="how-to-section" class="landing-section">
+                <h1 id="how-to-section-title" class="landing-section-title">How To Use This Portal</h1>
+                <p class="how-to-section-text landing-section-text">
+                    The Cannabis Digital Health Information Portal is designed 
+                    to help users easily find cannabis-related mobile apps based 
+                    on their needs and interests. Apps featured on the portal are 
+                    broadly categorized into three main types:
+                </p>
+                <div id="how-to-cards">
+                    <article class="how-to-card">
+                        <h2 class="how-to-card-title">Recovery:</h2>
+                        <p class="how-to-card-text">
+                            Apps that support individuals who are trying to pause, 
+                            reduce, or stop using cannabis.
+                        </p>
+                    </article>
+                    <article class="how-to-card">
+                        <h2 class="how-to-card-title">Cultivation:</h2>
+                        <p class="how-to-card-text">
+                            Apps that assist users in growing cannabis or recognizing 
+                            different cannabis plants and products.
+                        </p>
+                    </article>
+                    <article class="how-to-card">
+                        <h2 class="how-to-card-title">Consumer:</h2>
+                        <p class="how-to-card-text">
+                            Apps aimed at those using cannabis for entertainment, 
+                            wellness, or medical purposes.
+                        </p>
+                    </article>
+                </div>
+
+                <p class="how-to-section-text landing-section-text">
+                    Within these three categories, this portal also offers granular 
+                    filters to help users find more specific types of content. These 
+                    filters allow users to search by features such as location-based 
+                    dispensary information, cannabis recipes, strain databases, and 
+                    more—enabling a more tailored and informative experience.
+                </p>
+
+            </section>
+        </main>
+        <footer class="site-footer">
+            <p>© 2025 Cannabis Health Hub. All rights reserved.</p>
+        </footer>
+    </body>
 </html>

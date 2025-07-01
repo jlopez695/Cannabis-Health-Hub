@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Weedmaps: Buy Local Weed",
+    "main": "consumer",
+    "type": "app",
+    "genre": "lifestyle",
+    "subs": [
+      "Location Based Distillery Information",
+      "Online Shopping",
+      "News",
+      "Health/Medical Info",
+      "Product Info/Strain Library",
+      "Event"
+    ],
+    "rating": 4.9,
+    "reviews": 280200,
+    "logo": "./images/weedmaps-app-logo.webp",
+    "play": "https://play.google.com/store/apps/details?id=com.weedmaps.app.android&hl=en_US",
+    "app": "https://apps.apple.com/us/app/weedmaps-buy-local-weed/id35018983",
+    "desc": "Weedmaps is a go-to mobile app and web platform for cannabis users to discover and shop local dispensaries and products, while also serving as an essential marketing and operational tool for cannabis retailers and brands."
+  },
+  {
+    "name": "Leafly: Find Cannabis and CBD",
+    "main": "consumer",
+    "type": "app",
+    "genre": "lifestyle",
+    "subs": [
+      "Location Based Distillery Information",
+      "Online Shopping",
+      "News",
+      "Health/Medical Info",
+      "Product Info/Strain Library",
+      "Recipe"
+    ],
+    "rating": 4.8,
+    "reviews": 274700,
+    "logo": "./images/leafly-app-logo.webp",
+    "play": "https://play.google.com/store/apps/details?id=leafly.android&hl=en_US",
+    "app": "https://apps.apple.com/us/app/leafly-find-weed-near-you/id416456429",
+    "desc": "Leafly is a cannabis information and shopping platform available on mobile and web. It offers a searchable database of cannabis strains, effects, and local dispensaries. Leafly also provides educational content and product ratings to help users make informed decisions."
+  },
+  {
+    "name": "Grow with Jane - Cannabis plan",
+    "main": "cultivation",
+    "type": "app",
+    "genre": "productivity",
+    "subs": [
+      "Journaling",
+      "Community"
+    ],
+    "rating": 4.1,
+    "reviews": 335,
+    "logo": "./images/grow-with-jane-app-logo.webp",
+    "play": "https://play.google.com/store/apps/details?id=com.unlogical.jane&hl=en_US",
+    "app": "https://apps.apple.com/us/app/grow-with-jane-grow-journal/id1467850558",
+    "desc": "Grow with Jane is a mobile app and web tool designed for cannabis home growers to track and manage their cultivation process. It offers personalized grow logs, reminders, and progress tracking while also providing strain info and a private journal, supporting users from seed to harvest with structured guidance."
+  }
+]

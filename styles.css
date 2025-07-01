@@ -1,0 +1,410 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+
+/*
+  SITE WIDE HEADER STYLING
+*/
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 50px;
+}
+
+.header-logo {
+  width: 150px;
+}
+
+.branding {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  
+}
+
+.CHH-text {
+  align-self: flex-end;
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #1c3272;
+  display: inline-block;
+  padding-bottom: 3px;
+  border-bottom: 2.5px solid #bae6c4;
+}
+
+nav {
+  display: flex;
+  gap: 16px;
+  margin-left: auto;
+}
+
+.header-cta {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  color: #1B265F;
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: background-color 0.2s, color 0.2s;
+  font-weight: 600;
+}
+
+.header-cta:hover {
+  background-color: #1B265F;
+  color: #ffffff;
+}
+
+
+/*
+  SITE WIDE FOOTER STYLING
+*/
+
+.site-footer {
+  background: #1B265F;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  border-top: 5px solid black;
+}
+
+.site-footer p {
+  margin: 0;
+  font-weight: 400;
+}
+
+
+/*
+  LANDING PAGE STYLING
+*/
+
+#landing-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+#about-section {
+  background: #1B265F;
+}
+
+#how-to-section {
+  background: #D9D9D9;
+}
+
+.landing-section-title {
+  font-size: 40px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+#about-section-title {
+  color: white;
+}
+
+#how-to-section-title {
+  color: #1B265F;
+}
+
+.landing-section-text {
+  width: 885px;
+}
+
+.about-section-text {
+  color: white;
+}
+
+.how-to-section-text {
+  color: #1B265F;
+}
+
+#about-cta {
+  margin: 20px 0 45px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1B265F;
+  background: #D9D9D9;
+  padding: 15px 50px;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: 800;
+  border-radius: 10px;
+  transition: box-shadow 0.5s, color 0.5s;
+}
+
+#about-cta:hover {
+  box-shadow: 3px 2px yellow;
+}
+
+#how-to-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.how-to-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 705px;
+  height: 115px;
+  justify-content: space-around;
+  background: white;
+  border-radius: 5px;
+  transition: border 0.1s, color 0.1s;
+
+}
+
+.how-to-card:hover {
+  border: 2px solid black;
+  outline-offset: 5px;
+}
+
+.how-to-card-title {
+  color: #1B265F;
+  font-size: 25px;
+  margin: 20px 0 0px 30px;
+  padding: 0px;
+}
+
+.how-to-card-text {
+  align-self: center;
+  justify-self: center;
+  width: 525px;
+  height: 60px;
+  color: black;
+  font-size: 20px;
+  margin-top: 0px;
+}
+
+
+/*
+  PORTAL STYLING
+*/
+
+#portal-main {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 24px;
+}
+
+.top-controls {
+  display: flex;
+  gap: 20px;
+  /*padding: 24px 32px;*/
+}
+
+.top-controls button {
+  flex: 1 1 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 0;
+  border: none;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  font-weight: 100;
+  color: #fff;
+  background: #1B265F;
+  cursor: pointer;
+  box-shadow: 0 4px 16px #0001;
+  transition: background .15s;
+}
+
+.top-controls button:hover {
+  background: #83AFF0;
+  color: #374785;
+}
+
+#toggle-filters {
+  background: white;
+  border: 1px solid black;
+  color: black;
+  gap: 24px;
+}
+
+#toggle-filters img {
+  width: 30px;
+}
+
+#sort-menu {
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.filters-panel-and-cards {
+  display: flex;
+  gap: 24px;
+}
+
+.filters-panel {
+  display: none;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 18px;
+  padding: 24px 18px;
+  box-shadow: 0 4px 16px #0001;
+  width: 250px;
+  transition: all .3s;
+}
+
+.filters-panel.active {
+  display: block;
+}
+
+.filter-section { 
+  margin-bottom: 26px; 
+}
+
+.filter-section.collapsed label { 
+  display: none; 
+}
+
+.filters-panel h3 {
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: #1B265F;
+  margin: 10px 0;
+  cursor: pointer;
+  position: relative;
+  padding-right: 1.5em;
+}
+
+.filters-panel h3::after {
+  content: "▼";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform .2s ease;
+}
+
+.filter-section:not(.collapsed) h3::after {
+  transform: translateY(-50%) rotate(-180deg);
+}
+
+.filters-panel label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 1rem;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+
+.filters-panel input[type="checkbox"] {
+  accent-color: #36b363;
+  width: 1.1em;
+  height: 1.1em;
+  cursor: pointer;
+}
+
+.cards-grid {
+  display: grid;
+  /* auto-fit as many ~280px cards as will fit, then wrap */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  flex: 1;
+}
+
+.app-card {
+  background: #D9D9D9;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 2px 8px #1828481a;
+  transition: box-shadow .2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.app-card img {
+  /* let the icon fill & shrink with its card */
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+
+}
+
+.app-card:hover {
+  box-shadow: 0 4px 18px #223b6e33;
+}
+
+.app-card h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #223b6e;
+}
+
+.app-card img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 50px;
+  background: #f3f7fa;
+}
+
+.store-links {
+  display: flex;
+  align-self: flex-start;
+  gap: 9px;
+}
+
+.store-links a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border: none;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background .15s;
+  font-size: .99rem;
+  text-decoration: none;
+}
+
+.play-store {
+  background: #A4C639;
+}
+
+.app-store {
+  background: #2E2C2F;
+}
+
+.store-links a img {
+  width: 19px;
+  height: 19px;
+  border-radius: 6px;
+}
+
+.description {
+  margin-top: 0;
+  font-size: 1rem;
+  color: black;
+  line-height: 1.45;
+}
+
+
