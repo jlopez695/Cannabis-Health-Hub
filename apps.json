@@ -88,8 +88,127 @@
     "play": "https://play.google.com/store/apps/details?id=com.unlogical.jane&hl=en_US",
     "app": "https://apps.apple.com/us/app/affect-addiction-recovery/id1582444280",
     "desc": "Affect: Addiction Recovery is a smartphone-based telehealth app offering a structured outpatient program for alcohol and drug use, including cannabis, opioids, stimulants, and prescription medications. It features counseling via secure video, medication support, behavioral tracking, contingency‑management rewards, and access to peer and group resources. Private, insurance‑covered, and clinically accredited."
+  },
+  {
+    "name": "Curaleaf",
+    "main": "consumer",
+    "type": "app",
+    "genre": "shopping",
+    "subs": [
+      "Location Based Distillery Information",
+      "Online Shopping",
+      "Product Info/Strain Library"
+    ],
+    "rating": 4.3,
+    "reviews": 6929,
+    "logo": "./images/curaleaf-app-icon.webp",
+    "play": "https://play.google.com/store/apps/details?id=com.curaleaf.retail&hl=en_US",
+    "app": "https://apps.apple.com/us/app/curaleaf/id1628178866",
+    "desc": "The Curaleaf app allows registered users to browse products, view menus, place pickup or delivery orders from Curaleaf dispensaries, and track loyalty rewards. It features deal alerts, location-specific availability, age verification, in-app event notifications, personalized recommendations, and customer support. Available free on iOS and Android; functionality varies by state regulations.p"
+  },
+  {
+    "name": "The Apothecarium Dispensary",
+    "main": "consumer",
+    "type": "app",
+    "genre": "medical",
+    "subs": [
+      "Location Based Distillery Information",
+      "Online Shopping",
+      "Product Info/Strain Library"
+    ],
+    "rating": 4.9,
+    "reviews": 6500,
+    "logo": "./images/apothecarium-app-logo.webp",
+    "app": "https://apps.apple.com/us/app/the-apothecarium-dispensary/id1598622999",
+    "desc": "The Apothecarium app enables ordering cannabis products (flower, edibles, concentrates, tinctures, topicals) from local Apothecarium dispensaries in supported states. It offers express pickup, curbside, drive-thru, or delivery options, real-time order tracking, easy reordering, and a loyalty rewards program. Availability and services vary by location and local regulations, and the app is restricted to The Apothecarium/TerrAscend network."
+  },
+  {
+    "name": "WeedPro: Cannabis Strain Guide",
+    "main": "consumer",
+    "type": "app",
+    "genre": "medical",
+    "subs": [
+      "Location Based Distillery Information",
+      "Online Shopping",
+      "News",
+      "law info",
+      "Product Info/Strain Library",
+      "Health/Medical Info",
+      "Journaling",
+      "Chatbot",
+      "Recipe"
+    ],
+    "rating": 4.5,
+    "reviews": 4210,
+    "logo": "./images/weedpro-app-logo.webp",
+    "play": "https://play.google.com/store/apps/details?id=com.strainreferencefree&hl=en_US",
+    "app": "https://apps.apple.com/us/app/weedpro-cannabis-strain-guide/id1358127550",
+    "desc": "WeedPro: Cannabis Strain Guide provides a database of thousands of strains with details on flavor profiles, potency, genetics, and medical effects. It offers AI-driven recommendations based on user notes and preferences, and lets users rate strains and track experiences."
+  },
+  {
+    "name": "Curaleaf+",
+    "main": "consumer",
+    "type": "app",
+    "genre": "medical",
+    "subs": [
+      "Location Based Distillery Information",
+      "Online Shopping",
+      "Product Info/Strain Library"
+    ],
+    "rating": 4.9,
+    "reviews": 6600,
+    "logo": "./images/curaleaf-plus-app-logo.webp",
+    "app": "https://apps.apple.com/us/app/curaleaf/id6479368003",
+    "desc": "Curaleaf+ is an iOS-only app available exclusively in select markets such as Florida and New Jersey. It lets registered users browse product menus, place pickup or delivery orders, and track loyalty rewards while surfacing region-specific promotions and notifications. Unlike the standard Curaleaf app, it focuses on targeted market offerings and iOS users."
+  },
+  {
+    "name": "Eaze",
+    "main": "consumer",
+    "type": "app",
+    "genre": "medical",
+    "subs": [
+      "Online Shopping",
+      "Product Info/Strain Library",
+      "Health/Medical Info"
+    ],
+    "rating": 4.5,
+    "reviews": 11460,
+    "logo": "./images/eaze-app-logo.webp",
+    "play": "https://play.google.com/store/apps/details?id=com.eaze&hl=en_US",
+    "app": "https://apps.apple.com/us/app/eaze-cannabis-delivery/id1181240617",
+    "desc": "Eaze is a mobile app offering on-demand cannabis delivery in supported regions, enabling users to browse products, verify age, place orders for same-day delivery, track orders in real time, and discover rotating deals. Available on both iOS and Android, it distinguishes itself by focusing on home delivery and real-time tracking features."
+  },
+  {
+    "name": "Quit Weed",
+    "main": "recovery",
+    "type": "app",
+    "genre": "lifestyle",
+    "subs": ["Tracking & Monitoring"],
+    "rating": "4.6",
+    "reviews": "3060",
+    "logo": "./images/quit-weed-app-logo.webp",
+    "play": "https://play.google.com/store/apps/details?id=com.michaljanecek.quitweed&hl=en_US",
+    "app": "https://apps.apple.com/vn/app/quit-weed/id1644552753",
+    "desc": "Quit Weed is a mobile app guiding users through quitting cannabis with features such as a withdrawal timeline, health improvements tracking, money-saved calculations, achievement rewards, and journaling over the crucial early recovery weeks. It focuses on motivation and progress visualization."
+  },
+  {
+    "name": "Grounded - Quit Weed Tracker",
+    "main": "recovery",
+    "type": "app",
+    "genre": "health & fitness",
+    "subs": [
+      "Tracking & Monitoring",
+      "Community",
+      "Health/Medical Info",
+      "Journaling"
+    ],
+    "rating": "4.8",
+    "reviews": "7690",
+    "logo": "./images/grounded-app-logo.webp",
+    "play": "https://play.google.com/store/apps/details?id=com.ifeanyi.grounded&hl=en_US",
+    "app": "https://apps.apple.com/us/app/grounded-quit-weed-smoking/id1463294846",
+    "desc": "Grounded is a mobile app for iOS and Android dedicated to helping users quit cannabis or take tolerance breaks, offering tools such as a quit journal, withdrawal symptom tracking and tolerance-reset timelines, daily mood logging, progress visualization (e.g., virtual tree growth), savings tracking, achievements, and community support."
   }
-  
-  
+
 
 ]
