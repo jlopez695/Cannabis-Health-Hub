@@ -211,7 +211,7 @@ nav {
 .top-controls {
   display: flex;
   gap: 20px;
-  /*padding: 24px 32px;*/
+  padding: 0px 32px;
 }
 
 .top-controls button {
@@ -256,6 +256,7 @@ nav {
 .filters-panel-and-cards {
   display: flex;
   gap: 24px;
+  padding: 0px 32px;
 }
 
 .filters-panel {
@@ -323,7 +324,7 @@ nav {
 .cards-grid {
   display: grid;
   /* auto-fit as many ~280px cards as will fit, then wrap */
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
   flex: 1;
 }
@@ -342,10 +343,10 @@ nav {
 
 .app-card img {
   /* let the icon fill & shrink with its card */
-  width: 100%;
+  width: 90%;
   height: auto;
   object-fit: contain;
-
+  border-radius: 20%;
 }
 
 .app-card:hover {
@@ -356,14 +357,6 @@ nav {
   font-size: 1.1rem;
   font-weight: 700;
   color: #223b6e;
-}
-
-.app-card img {
-  width: 200px;
-  height: 200px;
-  object-fit: contain;
-  border-radius: 50px;
-  background: #f3f7fa;
 }
 
 .store-links {

@@ -12,11 +12,11 @@
       "Product Info/Strain Library",
       "Event"
     ],
-    "rating": 4.9,
-    "reviews": 280200,
+    "rating": 4.8,
+    "reviews": 375000,
     "logo": "./images/weedmaps-app-logo.webp",
     "play": "https://play.google.com/store/apps/details?id=com.weedmaps.app.android&hl=en_US",
-    "app": "https://apps.apple.com/us/app/weedmaps-buy-local-weed/id35018983",
+    "app": "https://apps.apple.com/us/app/weedmaps-buy-local-weed/id350189835",
     "desc": "Weedmaps is a go-to mobile app and web platform for cannabis users to discover and shop local dispensaries and products, while also serving as an essential marketing and operational tool for cannabis retailers and brands."
   },
   {
@@ -33,7 +33,7 @@
       "Recipe"
     ],
     "rating": 4.8,
-    "reviews": 274700,
+    "reviews": 367100,
     "logo": "./images/leafly-app-logo.webp",
     "play": "https://play.google.com/store/apps/details?id=leafly.android&hl=en_US",
     "app": "https://apps.apple.com/us/app/leafly-find-weed-near-you/id416456429",
@@ -48,11 +48,48 @@
       "Journaling",
       "Community"
     ],
-    "rating": 4.1,
-    "reviews": 335,
+    "rating": 3.8,
+    "reviews": 5085,
     "logo": "./images/grow-with-jane-app-logo.webp",
     "play": "https://play.google.com/store/apps/details?id=com.unlogical.jane&hl=en_US",
     "app": "https://apps.apple.com/us/app/grow-with-jane-grow-journal/id1467850558",
     "desc": "Grow with Jane is a mobile app and web tool designed for cannabis home growers to track and manage their cultivation process. It offers personalized grow logs, reminders, and progress tracking while also providing strain info and a private journal, supporting users from seed to harvest with structured guidance."
+  },
+  {
+    "name": "MÜV Dispensary",
+    "main": "consumer",
+    "type": "app",
+    "genre": "medical",
+    "subs": [
+      "Location Based Distillery Information",
+      "Online Shopping",
+      "Product Info/Strain Library"
+    ],
+    "rating": 4.9,
+    "reviews": 10000,
+    "logo": "./images/muv-dispensary-logo.webp",
+    "app": "https://apps.apple.com/us/app/m%C3%BCv-dispensary/id6498709371",
+    "desc": "MÜV Dispensary is a Florida-based medical cannabis app available on iOS via the Apple App Store. It enables users to browse and purchase cannabis products (such as flower, edibles, and concentrates), manage orders, access tiered rewards, and connect with customer support—all within a single platform."
+  },
+  {
+    "name": "Affect: Addiction Recovery",
+    "main": "recovery",
+    "type": "app",
+    "genre": "medical",
+    "subs": [
+      "Tracking & Monitoring",
+      "Community",
+      "Chatbot",
+      "Health/Medical Info"
+    ],
+    "rating": 4.7,
+    "reviews": 2984,
+    "logo": "./images/affect-app-logo.webp",
+    "play": "https://play.google.com/store/apps/details?id=com.unlogical.jane&hl=en_US",
+    "app": "https://apps.apple.com/us/app/affect-addiction-recovery/id1582444280",
+    "desc": "Affect: Addiction Recovery is a smartphone-based telehealth app offering a structured outpatient program for alcohol and drug use, including cannabis, opioids, stimulants, and prescription medications. It features counseling via secure video, medication support, behavioral tracking, contingency‑management rewards, and access to peer and group resources. Private, insurance‑covered, and clinically accredited."
   }
+  
+  
+
 ]

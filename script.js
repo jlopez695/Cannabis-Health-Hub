@@ -36,20 +36,22 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // 4) Card HTML helper
   function createCardHTML(app) {
-    return `
-      <article class="app-card">
-        <h2>${app.name}</h2>
-        <img src="${app.logo}" alt="${app.name} icon">
-        <div class="store-links">
-          <a href="${app.play}" class="play-store">
+  return `
+    <article class="app-card">
+      <h2>${app.name}</h2>
+      <img src="${app.logo}" alt="${app.name} icon">
+      <div class="store-links">
+        ${app.play ? `
+          <a href="${app.play}" class="play-store" target="_blank">
             Play Store <img src="./images/play-store-logo.jpg" alt="Play Store icon">
-          </a>
-          <a href="${app.app}" class="app-store">
+          </a>` : ''}
+        ${app.app ? `
+          <a href="${app.app}" class="app-store" target="_blank">
             App Store <img src="./images/app-store-icon.png" alt="App Store icon">
-          </a>
-        </div>
-        <p class="description">${app.desc}</p>
-      </article>`;
+          </a>` : ''}
+      </div>
+      <p class="description">${app.desc}</p>
+    </article>`;
   }
 
   // 5) Render a list of cards
