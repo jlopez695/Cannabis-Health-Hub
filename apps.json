@@ -208,7 +208,140 @@
     "play": "https://play.google.com/store/apps/details?id=com.ifeanyi.grounded&hl=en_US",
     "app": "https://apps.apple.com/us/app/grounded-quit-weed-smoking/id1463294846",
     "desc": "Grounded is a mobile app for iOS and Android dedicated to helping users quit cannabis or take tolerance breaks, offering tools such as a quit journal, withdrawal symptom tracking and tolerance-reset timelines, daily mood logging, progress visualization (e.g., virtual tree growth), savings tracking, achievements, and community support."
+  },
+  {
+    "name": "HiGrade: Cannabis Testing",
+    "main": "cultivation",
+    "type": "app",
+    "genre": "lifestyle",
+    "subs": [
+      "Plant Recognition",
+      "Strain Info",
+      "Grade/Potency Classification"
+    ],
+    "rating": "4.7",
+    "reviews": "2648",
+    "logo": "./images/higrade-app-icon.webp",
+    "play": "https://play.google.com/store/apps/details?id=com.phonegap.higrade&hl=en_US",
+    "app": "https://apps.apple.com/us/app/higrade-cannabis-testing/id1228209196",
+    "desc": "HiGrade is a smartphone app that uses AI-powered image analysis of trichomes from three photos to estimate THC content and visually grade cannabis flower quality; it also offers cultivation support—such as pest/disease diagnosis, nutrient balance, and optimal harvest timing"
+  },
+  {
+    "name": "Kush Scan: AI Weed Identifier",
+    "main": "cultivation",
+    "type": "app",
+    "genre": "medical",
+    "subs": [
+      "Plant Recognition",
+      "Strain Info",
+      "Journaling",
+      "Grade/Potency Classification",
+      "Community"
+    ],
+    "rating": "4.1",
+    "reviews": "1762",
+    "logo": "./images/kush-scan-app-logo.webp",
+    "play": "https://play.google.com/store/apps/details?id=com.kushscan.kushscan&hl=en_US",
+    "app": "https://apps.apple.com/us/app/thc-weed-identifier-kush-scan/id1462406146",
+    "desc": "Kush Scan is a mobile app that leverages AI-driven computer vision to identify cannabis strains from photos of dry flower, offering strain names, estimated THC potency, and sativa/indica ratios. It focuses on educational exploration with scan history and optional community features, distinguishing itself from ordering apps."
+  },
+  {
+    "name": "Zen Leaf+",
+    "main": "consumer",
+    "type": "app",
+    "genre": "medical",
+    "subs": [
+      "Location Based Distillery Information",
+      "Online Shopping",
+      "Product Info/Strain Library"
+    ],
+    "rating": "4.9",
+    "reviews": "4600",
+    "logo": "./images/zen-leaf-plus-app-logo.webp",
+    "app": "https://apps.apple.com/us/app/zen-leaf/id6448922214",
+    "desc": "Zen Leaf+ is a mobile app available exclusively on iOS for customers in supported regions, offering order-ahead, pay, and rewards functionality. It lets users browse menus, pay via Aeropay, track orders in real time, and earn loyalty points on purchases, providing a streamlined dispensary experience tailored to participating locations"
+  },
+  {
+    "name": "Jane: Find Cannabis Products",
+    "main": "consumer",
+    "type": "app",
+    "genre": "medical",
+    "subs": [
+      "Location Based Distillery Information",
+      "Online Shopping",
+      "Health/Medical Info",
+      "Product Info/Strain Library"
+    ],
+    "rating": "4.8",
+    "reviews": "3300",
+    "logo": "./images/jane-app-logo.webp",
+    "app": "https://apps.apple.com/us/app/jane-find-cannabis-products/id1592735587",
+    "desc": "Jane: Find Cannabis Products is an iOS-only cannabis shopping app that aggregates dispensary menus, offers real-time inventory updates, and enables users to browse by effects, categories, and price, place pickup or delivery orders where supported, view verified reviews, and receive personalized recommendations and deal alerts on Apple devices"
+  },
+  {
+    "name": "Stash Cash Rewards",
+    "main": "consumer",
+    "type": "app",
+    "genre": "medical",
+    "subs": [
+      "Location Based Distillery Information",
+      "Online Shopping",
+      "Event"
+    ],
+    "rating": "3.1",
+    "reviews": "430",
+    "logo": "./images/stash-cash-rewards-app-logo.webp",
+    "play": "https://play.google.com/store/apps/details?id=com.cannabist.wallet&hl=en_US",
+    "app": "https://apps.apple.com/us/app/stash-cash-rewards/id1603898047",
+    "desc": "Stash Cash Rewards is a mobile loyalty app by Columbia Care that enables users to track points, view deals and menus, place orders where supported, and earn rewards redeemable across participating dispensaries. It offers push notifications for launches and restocks, and is available on both iOS and Android in supported regions"
+  },
+  {
+    "name": "Everything 420",
+    "main": "consumer",
+    "type": "app",
+    "genre": "lifestyle",
+    "subs": [
+      "Online Shopping",
+      "Product Info/Strain Library"
+    ],
+    "rating": "4.6",
+    "reviews": "4613",
+    "logo": "./images/everything-420-app-logo.webp",
+    "play": "https://play.google.com/store/apps/details?id=co.tapcart.app.id_hedapps2&hl=en_US",
+    "app": "https://apps.apple.com/us/app/everything-420/id1619838114",
+    "desc": "Everything 420 is a mobile shopping app available on both iOS and Android that aggregates cannabis accessories and related products into a single interface. It offers fast, discreet shipping options, 24/7 customer support, and a wide inventory including glassware, vaporizers, and consumables. Users can browse categories, track orders, and receive deal notifications on their devices."
+  },
+  {
+    "name": "The Flowery",
+    "main": "consumer",
+    "type": "app",
+    "genre": "medical",
+    "subs": [
+      "Location Based Distillery Information",
+      "Online Shopping",
+      "Product Info/Strain Library",
+      "Chatbot"
+    ],
+    "rating": "4.9",
+    "reviews": "3400",
+    "logo": "./images/the-flowery-app-logo.webp",
+    "app": "https://apps.apple.com/us/app/the-flowery/id6451003120",
+    "desc": "The Flowery is a mobile app that enables Florida medical cannabis patients to browse and order premium indoor-grown strains for delivery or pickup. It features a searchable product catalog, real-time inventory updates, and push notifications for new product drops and exclusive promotions. Only available on iOS."
+  },
+  {
+    "name": "Ivy Hall Dispensary",
+    "main": "consumer",
+    "type": "app",
+    "genre": "medical",
+    "subs": [
+      "Location Based Distillery Information",
+      "Online Shopping",
+      "Product Info/Strain Library"
+    ],
+    "rating": "5.0",
+    "reviews": "2800",
+    "logo": "./images/ivy-hall-dispensary-app-logo.webp",
+    "app": "https://apps.apple.com/us/app/the-flowery/id6451003120",
+    "desc": "Ivy Hall Dispensary’s mobile app enables Illinois customers—across Chicago, Bolingbrook, Peoria, Waukegan, and other locations—to find nearby dispensaries, place pickup orders, track order status in real time, earn and redeem loyalty points through its Charter Club, contact stores directly, and refer friends for rewards. Operates only within Illinois. Available on iOS only."
   }
-
-
 ]
