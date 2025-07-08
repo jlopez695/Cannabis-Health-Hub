@@ -2,19 +2,21 @@
 
 // 0) Debug: clear old logs
 console.clear();
-console.log('🚀 script.js loaded');
+console.log('script.js loaded');
 
 document.addEventListener('DOMContentLoaded', async () => {
+  // ───── APPS SECTION ─────
+
   // 1) Fetch apps.json
   let appsRaw;
   try {
-    console.log('🔍 fetching apps.json…');
+    console.log('fetching apps.json…');
     const resp = await fetch('apps.json', { cache: 'no-store' });
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     appsRaw = await resp.json();
-    console.log('✅ apps.json loaded:', appsRaw);
+    console.log('apps.json loaded:', appsRaw);
   } catch (err) {
-    console.error('❌ failed to load apps.json:', err);
+    console.error('failed to load apps.json:', err);
     document.getElementById('cards').innerHTML =
       '<p style="color:red;">Error loading apps. Check console.</p>';
     return;
@@ -22,7 +24,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // 2) Stamp an index for “Featured” ordering
   const apps = appsRaw.map((app, i) => ({ ...app, _idx: i }));
-  console.log('🔖 apps with index:', apps);
+  console.log('apps with index:', apps);
 
   // 3) Cache DOM refs
   const panel       = document.querySelector('.filters-panel');
@@ -36,22 +38,23 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // 4) Card HTML helper
   function createCardHTML(app) {
-  return `
-    <article class="app-card">
-      <h2>${app.name}</h2>
-      <img src="${app.logo}" alt="${app.name} icon">
-      <div class="store-links">
-        ${app.play ? `
-          <a href="${app.play}" class="play-store" target="_blank">
-            Play Store <img src="./images/play-store-logo.jpg" alt="Play Store icon">
-          </a>` : ''}
-        ${app.app ? `
-          <a href="${app.app}" class="app-store" target="_blank">
-            App Store <img src="./images/app-store-icon.png" alt="App Store icon">
-          </a>` : ''}
-      </div>
-      <p class="description">${app.desc}</p>
-    </article>`;
+    return `
+      <article class="app-card">
+        <h2>${app.name}</h2>
+        <img src="${app.logo}" alt="${app.name} icon">
+        <div class="store-links">
+          ${app.app ? `
+            <a href="${app.app}" class="app-store" target="_blank">
+              App Store <img src="./images/app-store-icon.png" alt="App Store icon">
+            </a>` : ''}
+          ${app.play ? `
+            <a href="${app.play}" class="play-store" target="_blank">
+              Play Store <img src="./images/play-store-logo.jpg" alt="Play Store icon">
+            </a>` : ''}
+          <span class="store-rating">${app.rating}★</span>
+        </div>
+        <p class="description">${app.desc}</p>
+      </article>`;
   }
 
   // 5) Render a list of cards
@@ -82,7 +85,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       return mainOK && typeOK && genreOK && subsOK;
     });
 
-    console.log('🔧 filtered view:', view.map(a => a.name));
+    console.log('filtered view:', view.map(a => a.name));
 
     // 6c) Sort
     switch (sortMenu.value) {
@@ -140,12 +143,60 @@ document.addEventListener('DOMContentLoaded', async () => {
   // 7e) Sort menu
   sortMenu.addEventListener('change', applyFiltersAndSort);
 
-  // 8) INITIAL PAINT: clear everything, then filter+sort (which will show ALL apps)
+  // 8) INITIAL PAINT: clear everything, then filter+sort
   activeMain = null;
   mainButtons.forEach(b => b.classList.remove('active'));
   allChecks.forEach(cb => (cb.checked = false));
   sortMenu.value = 'default';
-
-  console.log('💥 initial render (should show all three):', apps.map(a => a.name));
+  console.log('initial render:', apps.map(a => a.name));
   applyFiltersAndSort();
+});
+
+// ───── FAQ PAGE SCRIPT ─────
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    const res = await fetch('faq.json');
+    const faqs = await res.json();
+    const container = document.getElementById('faq-container');
+
+    // Group FAQs by category
+    const grouped = {};
+    faqs.forEach(faq => {
+      const category = faq.category;
+      if (!grouped[category]) grouped[category] = [];
+      grouped[category].push(faq);
+    });
+
+    // Loop through each category
+    for (const category in grouped) {
+      // Add category heading
+      const heading = document.createElement('h2');
+      heading.textContent = category;
+      heading.className = 'faq-category';
+      container.appendChild(heading);
+
+      // Add each question in that category
+      grouped[category].forEach(faq => {
+        const item = document.createElement('div');
+        item.classList.add('faq-item');
+        item.innerHTML = `
+          <button class="faq-question">
+            ${faq.question} <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer"><p class="faq-p">${faq.answer}</p></div>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    // Toggle functionality
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        button.parentElement.classList.toggle('open');
+      });
+    });
+
+  } catch (err) {
+    console.error('failed to load faq.json:', err);
+  }
 });

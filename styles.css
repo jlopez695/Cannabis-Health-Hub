@@ -8,7 +8,6 @@ body {
   font-family: 'Inter', Arial, sans-serif;
 }
 
-
 /*
   SITE WIDE HEADER STYLING
 */
@@ -231,9 +230,10 @@ nav {
   transition: background .15s;
 }
 
-.top-controls button:hover {
+.main-filter:hover,
+.main-filter.active {
   background: #83AFF0;
-  color: #374785;
+  color:      #374785;
 }
 
 #toggle-filters {
@@ -266,7 +266,7 @@ nav {
   border-radius: 18px;
   padding: 24px 18px;
   box-shadow: 0 4px 16px #0001;
-  width: 250px;
+  width: 225px;
   transition: all .3s;
 }
 
@@ -342,7 +342,6 @@ nav {
 }
 
 .app-card img {
-  /* let the icon fill & shrink with its card */
   width: 90%;
   height: auto;
   object-fit: contain;
@@ -362,7 +361,8 @@ nav {
 .store-links {
   display: flex;
   align-self: flex-start;
-  gap: 9px;
+  align-items: center;
+  gap: 0.5em;
 }
 
 .store-links a {
@@ -393,11 +393,177 @@ nav {
   border-radius: 6px;
 }
 
+/* Style the star-rating bubble */
+.store-rating {
+  margin-left: auto;               /* push rating to the far right */
+  padding: 4px 8px;                /* small pill shape */
+  background: #FFE066;             /* light yellow */
+  color: #333;                     /* dark text for contrast */
+  font-weight: bold;
+  border-radius: 12px;
+  font-size: 0.9rem;               /* slightly smaller than button text */
+  display: flex;
+  align-items: center;
+  gap: 4px;                        /* space between number and ★ */
+}
+
+/* Optional: give the star character its own color */
 .description {
   margin-top: 0;
   font-size: 1rem;
   color: black;
   line-height: 1.45;
+}
+
+/*
+  FAQ STYLING
+*/
+
+#faq-section-title {
+    text-align: center;
+    font-size: 60px;
+}
+
+.faq-item {
+  width: 640px;
+  margin: 10px auto;
+  text-align: left;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 12px;
+  background: white;
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+  color: #1c3272;
+}
+
+.faq-category {
+  max-width: 640px;
+  margin: 40px auto 10px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #1c3272;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 6px;
+}
+
+
+.faq-answer {
+  display: none;
+  padding: 10px;
+  background: #f9f9f9;
+  border-left: 3px solid #1c3272;
+  font-size: 0.95em;
+}
+
+.faq-item.open .faq-answer {
+  display: block;
+}
+
+.faq-item.open .faq-arrow {
+  transform: rotate(180deg);
+}
+
+#faq-body {
+    color: #1c3272;
+}
+
+.faq-p {
+    color: #1c3272;
+}
+
+/*
+  CONTACT STYLING
+*/
+
+#contact-nameSection, #contact-emailSection {
+    width: 123%;
+}
+
+#contact-send-message-btn {
+    width: 130px;
+    height: 40px;
+}
+.contact-form-row {
+  display: flex;
+  gap: 0; /* removes space between the groups */
+  align-items: flex-start;
+}
+
+.contact-form-group {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px; /* optional space between them */
+}
+
+#contact-phoneNumber {
+  width: 200px;
+}
+
+#contact-reason {
+  width: 250px;
+}
+
+
+#contact-body {
+    font-size: 20px;
+    color: #1c3272;
+}
+
+#contact-heading {
+    font-size: 68px;
+}
+#contact-container {
+  display: flex;
+}
+
+#contact-users-message {
+    height: 250px;
+    margin-top: 5px;
+    width: 50%
+}
+/* Contact info section (left side) */
+#contact-details {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+/* Form area (right side) */
+#contact-form {
+  background-color: white;
+  flex: 1;
+  padding: 30px;
+  box-sizing: border-box;
+  height: 100vh;
+  color: #1c3272;
+}
+
+.contact-textfield {
+
+  width: 40%;
+  box-sizing: border-box;
+  height: 50px;
+  font-size: 18px;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+
+.contact-input::placeholder {
+  font-size: 18px;
 }
 
 

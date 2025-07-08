@@ -1,0 +1,72 @@
+[
+  {
+    "question": "Who is this portal for?",
+    "answer": "This portal is designed for consumers, growers, and individuals in recovery who want to explore cannabis-related digital tools.",
+    "category": "General"
+  },
+  {
+    "question": "How is this portal different from the App Store or Google Play?",
+    "answer": "This portal curates cannabis-specific apps with research-backed filters to support public health and informed decision-making.",
+    "category": "General"
+  },
+  {
+    "question": "Is this portal affiliated with any cannabis company?",
+    "answer": "No. This platform is maintained by the Cannabis Research Institute and the University of Illinois, with no commercial partnerships.",
+    "category": "General"
+  },
+  {
+    "question": "How can I find apps for growing cannabis?",
+    "answer": "Select the “Cultivation” filter to browse apps focused on cannabis growing, journaling, plant care, and harvest planning.",
+    "category": "App Use"
+  },
+  {
+    "question": "Are there apps to help me quit cannabis?",
+    "answer": "Yes. Use the “Recovery” filter to explore apps designed to support users looking to pause, reduce, or stop cannabis use.",
+    "category": "App Use"
+  },
+  {
+    "question": "Can I use this portal on my phone?",
+    "answer": "Yes! The portal is fully responsive and works on all devices including smartphones and tablets.",
+    "category": "App Use"
+  },
+  {
+    "question": "Does this portal collect my personal data?",
+    "answer": "No personal data is collected or stored by the portal. We provide links to third-party apps that follow their own privacy policies.",
+    "category": "Privacy"
+  },
+  {
+    "question": "Are the apps on this portal safe to download?",
+    "answer": "Apps are linked directly to official app stores. You should still review app permissions and ratings before downloading.",
+    "category": "Privacy"
+  },
+  {
+    "question": "Do any apps offer cannabis recipes?",
+    "answer": "Yes. Use the filters to find apps that include edible recipes, cooking tips, and dosage guides for cannabis-based meals.",
+    "category": "App Use"
+  },
+  {
+    "question": "Is this portal updated regularly?",
+    "answer": "We aim to review and update app listings periodically as new research and tools emerge in the digital cannabis space.",
+    "category": "General"
+  },
+  {
+    "question": "How were the apps selected?",
+    "answer": "App listings are curated based on a qualitative research study evaluating usability, purpose, and relevance to public health goals.",
+    "category": "Research"
+  },
+  {
+    "question": "Can I contribute to research or suggest an app?",
+    "answer": "Yes. Please use the Contact Us page to share feedback or recommend apps for consideration in future updates.",
+    "category": "Research"
+  },
+  {
+    "question": "What filters can I use to narrow down apps?",
+    "answer": "You can filter by use-case category (Consumer, Cultivation, Recovery), genre, and specific features like strain libraries or dispensary finders.",
+    "category": "App Use"
+  },
+  {
+    "question": "What if an app is no longer available?",
+    "answer": "If an app becomes unavailable or removed from stores, please notify us through the contact form so we can review and update our listings.",
+    "category": "App Use"
+  }
+]
