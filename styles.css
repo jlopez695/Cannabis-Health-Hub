@@ -204,6 +204,7 @@ nav {
   margin: 0 auto;
   gap: 24px;
   padding-bottom: 50px;
+  min-height: calc(100vh - 140px);
 }
 
 .top-controls {
@@ -430,6 +431,7 @@ nav {
   width: 100%;
   padding: 12px;
   background: white;
+  border: none;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   display: flex;
@@ -438,6 +440,7 @@ nav {
   font-weight: bold;
   cursor: pointer;
   color: #1c3272;
+  outline: none; 
 }
 
 .faq-category {
