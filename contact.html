@@ -1,81 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <link rel="stylesheet" href="./styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contact Us</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-</head>
-<body id="contact-body">
+  </head>
+  <body id="contact-body">
     <header class="header">
-            <div class="branding">
-                <a href="https://dpi.uillinois.edu/applied-research/cannabis-research-institute/">
-                    <img class="header-logo" src="./images/dpi-cannabis-logo.png" alt="DPI cannabis research institute">
-                </a>
-                <h1 class="CHH-text">Cannabis Health Hub</h1>
+      <div class="branding">
+        <a href="https://dpi.uillinois.edu/applied-research/cannabis-research-institute/"><img class="header-logo" src="./images/dpi-cannabis-logo.png" alt="DPI cannabis research institute"></a>
+        <h1 class="CHH-text">Cannabis Health Hub</h1>
+      </div>
+      <nav>
+        <a class="header-cta" href="./index.html">Home</a>
+        <a class="header-cta" href="./portal.html">Portal</a>
+        <a class="header-cta" href="./faq.html">FAQ</a>
+        <a class="header-cta" href="./contact.html">Contact Us</a>
+      </nav>
+    </header>
+
+    <main id="contact-main">
+      <div id="contact-container">
+        <div id="contact-details">
+          <section id="contact-info" class="contact-section">
+            <h2 id="contact-heading">Have a Question?</h2>
+            <p>
+              If you have any questions or need more information, feel free to reach out! We're here to help and would love to hear from you.
+            </p>
+            <p>
+              You can email us at <a href="mailto:info@example.com">info@example.com</a>.
+            </p>
+          </section>
+        </div>
+
+        <div id="contact-form">
+          <form action="https://formsubmit.co/jobrandon2004@gmail.com" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+
+            <div id="contact-nameSection">
+              <label for="fullName">Full Name</label><br>
+              <input type="text" class="contact-textfield" placeholder="Enter Full Name" name="fullName"><br>
             </div>
-            <nav>
-                <a class="header-cta" href="./index.html">Home</a>
-                <a class="header-cta" href="./portal.html">Portal</a>
-                <a class="header-cta" href="./faq.html">FAQ</a>
-                <a class="header-cta" href="./contact.html">Contact Us</a>
-            </nav>
-        </header>
-        <div id="contact-container">
-  <div id="contact-details">
-    <section id="contact-info" class="contact-section">
-      <h2 id="contact-heading">Have a Question?</h2>
-      <p>If you have any questions or need more information, feel free to reach out! We're here to help and would love to hear from you.</p>
-      <p>You can email us at <a href="mailto:info@example.com">info@example.com</a>.</p>
-    </section>
-  </div>
 
-<div id="contact-form">
-  <form action="https://formsubmit.co/jobrandon2004@gmail.com" method="POST">
-    <input type="hidden" name="_captcha" value="false">
+            <div id="contact-emailSection">
+              <label for="email">Email</label><br>
+              <input type="text" class="contact-input contact-textfield" placeholder="Enter Email" name="email"><br>
+            </div>
 
-    <div id="contact-nameSection">
-      <label for="fullName" class="la">Full Name</label><br>
-      <input type="text" class="contact-textfield" placeholder="Enter Full Name" name="fullName"><br>
-    </div>
+            <div class="contact-form-row">
+              <div class="contact-form-group">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="text" class="contact-textfield" id="contact-phoneNumber" placeholder="Enter phone number" name="phoneNumber">
+              </div>
+              <div class="contact-form-group">
+                <label for="reason">Reason (optional)</label>
+                <select class="contact-textfield" id="contact-reason" name="reason">
+                  <option value="">-- Select Reason --</option>
+                  <option value="question">General Question</option>
+                  <option value="feedback">Feedback</option>
+                  <option value="issue">Report an Issue</option>
+                </select>
+              </div>
+            </div>
 
-    <div id="contact-emailSection">
-      <label for="email">Email</label><br>
-      <input type="text" class="contact-input contact-textfield" placeholder="Enter Email" name="email"><br>
-    </div>
+            <label for="users-message">Message</label><br>
+            <textarea class="contact-textfield" id="contact-users-message" name="message" rows="10" cols="50" placeholder="Type message here..."></textarea><br>
 
-    <div class="contact-form-row">
-      <div class="contact-form-group">
-        <label for="phoneNumber">Phone Number</label>
-        <input type="text" class="contact-textfield" id="contact-phoneNumber" placeholder="Enter phone number" name="phoneNumber">
+            <button type="submit" id="contact-send-message-btn">Send Message</button>
+          </form>
+        </div>
       </div>
+    </main>
 
-      <div class="contact-form-group">
-        <label for="reason">Reason (optional)</label>
-        <select class="contact-textfield" id="contact-reason" name="reason">
-          <option value="">-- Select Reason --</option>
-          <option value="question">General Question</option>
-          <option value="feedback">Feedback</option>
-          <option value="issue">Report an Issue</option>
-        </select>
-      </div>
-    </div>
-
-    <br>
-    <label for="users-message">Message</label><br>
-    <textarea class="contact-textfield" id="contact-users-message" name="message" rows="10" cols="50" placeholder="Type message here..."></textarea>
-    <br>
-
-    <button type="submit" id="contact-send-message-btn">Send Message</button>
-  </form>
-</div>
-
-
-
-
-</body>
-
+    <footer class="site-footer">
+      <p>© 2025 Cannabis Health Hub. All rights reserved.</p>
+    </footer>
+  </body>
 </html>

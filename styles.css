@@ -28,7 +28,6 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 50px;
-  
 }
 
 .CHH-text {
@@ -64,7 +63,6 @@ nav {
   color: #ffffff;
 }
 
-
 /*
   SITE WIDE FOOTER STYLING
 */
@@ -83,12 +81,13 @@ nav {
   font-weight: 400;
 }
 
-
 /*
   LANDING PAGE STYLING
 */
 
 #landing-main {
+  background: #D9D9D9;
+  padding-bottom: 50px;
   display: flex;
   flex-direction: column;
 }
@@ -102,6 +101,7 @@ nav {
 
 #about-section {
   background: #1B265F;
+  padding-bottom: 25px;
 }
 
 #how-to-section {
@@ -169,7 +169,6 @@ nav {
   background: white;
   border-radius: 5px;
   transition: border 0.1s, color 0.1s;
-
 }
 
 .how-to-card:hover {
@@ -180,8 +179,8 @@ nav {
 .how-to-card-title {
   color: #1B265F;
   font-size: 25px;
-  margin: 20px 0 0px 30px;
-  padding: 0px;
+  margin: 20px 0 0 30px;
+  padding: 0;
 }
 
 .how-to-card-text {
@@ -191,9 +190,8 @@ nav {
   height: 60px;
   color: black;
   font-size: 20px;
-  margin-top: 0px;
+  margin-top: 0;
 }
-
 
 /*
   PORTAL STYLING
@@ -205,12 +203,13 @@ nav {
   max-width: 1200px;
   margin: 0 auto;
   gap: 24px;
+  padding-bottom: 50px;
 }
 
 .top-controls {
   display: flex;
   gap: 20px;
-  padding: 0px 32px;
+  padding: 0 32px;
 }
 
 .top-controls button {
@@ -227,13 +226,13 @@ nav {
   background: #1B265F;
   cursor: pointer;
   box-shadow: 0 4px 16px #0001;
-  transition: background .15s;
+  transition: background 0.15s;
 }
 
 .main-filter:hover,
 .main-filter.active {
   background: #83AFF0;
-  color:      #374785;
+  color: #374785;
 }
 
 #toggle-filters {
@@ -256,7 +255,7 @@ nav {
 .filters-panel-and-cards {
   display: flex;
   gap: 24px;
-  padding: 0px 32px;
+  padding: 0 32px;
 }
 
 .filters-panel {
@@ -267,19 +266,19 @@ nav {
   padding: 24px 18px;
   box-shadow: 0 4px 16px #0001;
   width: 225px;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .filters-panel.active {
   display: block;
 }
 
-.filter-section { 
-  margin-bottom: 26px; 
+.filter-section {
+  margin-bottom: 26px;
 }
 
-.filter-section.collapsed label { 
-  display: none; 
+.filter-section.collapsed label {
+  display: none;
 }
 
 .filters-panel h3 {
@@ -298,7 +297,7 @@ nav {
   right: 0;
   top: 50%;
   transform: translateY(-50%) rotate(0deg);
-  transition: transform .2s ease;
+  transition: transform 0.2s ease;
 }
 
 .filter-section:not(.collapsed) h3::after {
@@ -323,7 +322,6 @@ nav {
 
 .cards-grid {
   display: grid;
-  /* auto-fit as many ~280px cards as will fit, then wrap */
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
   flex: 1;
@@ -334,7 +332,7 @@ nav {
   border-radius: 18px;
   padding: 18px;
   box-shadow: 0 2px 8px #1828481a;
-  transition: box-shadow .2s;
+  transition: box-shadow 0.2s;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -374,8 +372,8 @@ nav {
   padding: 4px 12px;
   border-radius: 20px;
   cursor: pointer;
-  transition: background .15s;
-  font-size: .99rem;
+  transition: background 0.15s;
+  font-size: 0.99rem;
   text-decoration: none;
 }
 
@@ -393,21 +391,19 @@ nav {
   border-radius: 6px;
 }
 
-/* Style the star-rating bubble */
 .store-rating {
-  margin-left: auto;               /* push rating to the far right */
-  padding: 4px 8px;                /* small pill shape */
-  background: #FFE066;             /* light yellow */
-  color: #333;                     /* dark text for contrast */
+  margin-left: auto;
+  padding: 4px 8px;
+  background: #FFE066;
+  color: #333;
   font-weight: bold;
   border-radius: 12px;
-  font-size: 0.9rem;               /* slightly smaller than button text */
+  font-size: 0.9rem;
   display: flex;
   align-items: center;
-  gap: 4px;                        /* space between number and ★ */
+  gap: 4px;
 }
 
-/* Optional: give the star character its own color */
 .description {
   margin-top: 0;
   font-size: 1rem;
@@ -420,8 +416,8 @@ nav {
 */
 
 #faq-section-title {
-    text-align: center;
-    font-size: 60px;
+  text-align: center;
+  font-size: 60px;
 }
 
 .faq-item {
@@ -434,7 +430,6 @@ nav {
   width: 100%;
   padding: 12px;
   background: white;
-  border: none;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   display: flex;
@@ -456,7 +451,6 @@ nav {
   padding-bottom: 6px;
 }
 
-
 .faq-answer {
   display: none;
   padding: 10px;
@@ -474,35 +468,41 @@ nav {
 }
 
 #faq-body {
-    color: #1c3272;
+  color: #1c3272;
+}
+
+#faq-main {
+  padding-bottom: 50px;
 }
 
 .faq-p {
-    color: #1c3272;
+  color: #1c3272;
 }
 
 /*
-  CONTACT STYLING
+  CONTACT US STYLING
 */
 
-#contact-nameSection, #contact-emailSection {
-    width: 123%;
+#contact-nameSection,
+#contact-emailSection {
+  width: 100%;
 }
 
 #contact-send-message-btn {
-    width: 130px;
-    height: 40px;
+  width: 130px;
+  height: 40px;
 }
+
 .contact-form-row {
   display: flex;
-  gap: 0; /* removes space between the groups */
+  gap: 0;
   align-items: flex-start;
 }
 
 .contact-form-group {
   display: flex;
   flex-direction: column;
-  margin-right: 10px; /* optional space between them */
+  margin-right: 10px;
 }
 
 #contact-phoneNumber {
@@ -513,25 +513,29 @@ nav {
   width: 250px;
 }
 
-
 #contact-body {
-    font-size: 20px;
-    color: #1c3272;
+  font-size: 20px;
+  color: #1c3272;
+}
+
+#contact-main {
+  padding-bottom: 50px;
 }
 
 #contact-heading {
-    font-size: 68px;
+  font-size: 68px;
 }
+
 #contact-container {
   display: flex;
 }
 
 #contact-users-message {
-    height: 250px;
-    margin-top: 5px;
-    width: 50%
+  height: 250px;
+  margin-top: 5px;
+  width: 50%;
 }
-/* Contact info section (left side) */
+
 #contact-details {
   width: 600px;
   display: flex;
@@ -540,18 +544,16 @@ nav {
   box-sizing: border-box;
 }
 
-/* Form area (right side) */
 #contact-form {
   background-color: white;
   flex: 1;
   padding: 30px;
   box-sizing: border-box;
-  height: 100vh;
+  height: auto;
   color: #1c3272;
 }
 
 .contact-textfield {
-
   width: 40%;
   box-sizing: border-box;
   height: 50px;
@@ -561,9 +563,6 @@ nav {
   margin-bottom: 15px;
 }
 
-
 .contact-input::placeholder {
   font-size: 18px;
 }
-
-
