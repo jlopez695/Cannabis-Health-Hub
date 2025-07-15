@@ -343,5 +343,45 @@
     "logo": "./images/ivy-hall-dispensary-app-logo.webp",
     "app": "https://apps.apple.com/us/app/ivy-hall-dispensary/id6449744708",
     "desc": "Ivy Hall Dispensary’s mobile app enables Illinois customers—across Chicago, Bolingbrook, Peoria, Waukegan, and other locations—to find nearby dispensaries, place pickup orders, track order status in real time, earn and redeem loyalty points through its Charter Club, contact stores directly, and refer friends for rewards. Operates only within Illinois. Available on iOS only."
+  },
+  {
+  "name": "Study: Adverse Health Effects of Marijuana Use",
+  "main": "recovery",
+  "type": "study",
+  "genre": "medical",
+  "subs": ["Health/Medical Info"],
+  "logo": "./images/pubmed-logo.png",
+  "url":  "https://pubmed.ncbi.nlm.nih.gov/21462790/",
+  "desc": "A 2014 New England Journal of Medicine review that breaks down the possible downsides of marijuana—like trouble with memory, lung irritation, higher crash risk when driving, and how it can lead to dependence—using easy-to-read charts and clear explanations."
+  },
+  {
+    "name": "Study: Cannabis Use for Exercise Recovery",
+    "main": "consumer",
+    "type": "study",
+    "genre": "health",
+    "subs": ["Health/Medical Info"],
+    "logo": "./images/research-gate.webp",
+    "url": "https://www.researchgate.net/publication/372936156_Cannabis_use_for_exercise_recovery_in_trained_individuals_a_survey_study",
+    "desc": "A survey study of 111 adult cannabis users showing that over 90% felt THC and CBD helped with physical recovery after exercise."
+  },
+  {
+    "name": "Study: Cannabis in Early Recovery from Opioids and Stimulants",
+    "main": "recovery",
+    "type": "study",
+    "genre": "medical",
+    "subs": ["Health/Medical Info"],
+    "logo": "./images/pubmed-logo.png",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11031937/",
+    "desc": "Explores how some individuals in early recovery use cannabis to help avoid relapse, though effects on anxiety and productivity vary."
+  },
+  {
+    "name": "Public Health Survey: Cannabis Usage in the U.S.",
+    "main": "consumer",
+    "type": "study",
+    "genre": "medical",
+    "subs": ["Health/Medical Info"],
+    "logo": "./images/cdc.webp",
+    "url": "https://www.cdc.gov/mmwr/volumes/74/wr/mm7412a1.htm",
+    "desc": "2022 CDC survey breaking down cannabis consumption patterns in U.S. adults, including smoking, vaping, edibles, and dabbing."
   }
 ]
