@@ -1,81 +1,22 @@
 [
   {
-    "name": "Riley Thompson",
-    "title": "Community Engagement Coordinator",
-    "email": "rthompson@placeholder.edu",
-    "phone": "312-555-4123",
+    "name": "Yuanye Ma",
+    "title": "Senior Research Associate",
+    "email": "person@placeholder.edu",
+    "phone": "555-555-5555",
     "image": "./images/profilePic.png"
   },
   {
-    "name": "Casey Martinez",
-    "title": "Data Visualization Intern",
-    "email": "cmartinez@placeholder.edu",
+    "name": "Jacob Lopez",
+    "title": "Developer",
+    "email": "person@placeholder.edu",
     "image": "./images/profilePic.png"
   },
   {
-    "name": "Sydney Patel",
-    "title": "Public Health Policy Fellow",
-    "email": "spatel@placeholder.edu",
-    "phone": "312-555-8877",
-    "image": "./images/profilePic.png"
-  },
-  {
-    "name": "Emerson Rivers",
-    "title": "Research Technologist, Digital Inclusion Lab",
-    "email": "erivers@placeholder.edu",
-    "phone": "312-555-2048",
-    "image": "./images/profilePic.png"
-  },
-  {
-    "name": "Kai Washington",
-    "title": "Graduate Research Assistant",
-    "email": "kwashington@placeholder.edu",
-    "image": "./images/profilePic.png"
-  },
-  {
-    "name": "Peyton Zhang",
-    "title": "Data Analyst, Social Mobility Initiative",
-    "email": "pzhang@placeholder.edu",
-    "phone": "312-555-3820",
-    "image": "./images/profilePic.png"
-  },
-  {
-    "name": "Jamie Nguyen",
-    "title": "Economic Development Fellow",
-    "email": "jnguyen@placeholder.edu",
-    "phone": "312-555-9842",
-    "image": "./images/profilePic.png"
-  },
-  {
-    "name": "Drew Castillo",
-    "title": "Program Coordinator, STEM Equity Programs",
-    "email": "dcastillo@placeholder.edu",
-    "image": "./images/profilePic.png"
-  },
-  {
-    "name": "Harper Lin",
-    "title": "Policy Analyst, Climate Equity Division",
-    "email": "hlin@placeholder.edu",
-    "phone": "312-555-7390",
-    "image": "./images/profilePic.png"
-  },
-  {
-    "name": "Quinn Delgado",
-    "title": "Assistant Program Manager, Tech Access Initiative",
-    "email": "qdelgado@placeholder.edu",
-    "image": "./images/profilePic.png"
-  },
-  {
-    "name": "Sasha Karim",
-    "title": "Digital Communications Associate",
-    "email": "skarim@placeholder.edu",
-    "phone": "312-555-2675",
-    "image": "./images/profilePic.png"
-  },
-  {
-    "name": "Logan Foster",
-    "title": "Urban Data Intern",
-    "email": "lfoster@placeholder.edu",
+    "name": "Joshua Olmos",
+    "title": "Developer",
+    "email": "person@placeholder.edu",
+    "phone": "555-555-555",
     "image": "./images/profilePic.png"
   }
 ]

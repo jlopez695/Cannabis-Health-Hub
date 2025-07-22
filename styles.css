@@ -9,6 +9,7 @@ body {
   font-family: 'Inter', Arial, sans-serif;
 }
 
+
 /*
   SITE WIDE HEADER STYLING
 */
@@ -170,7 +171,7 @@ nav {
   perspective: 1000px;
 }
 
-.how-to-card-container:hover > .how-to-card {
+.how-to-card-container:hover>.how-to-card {
   cursor: pointer;
   transform: rotateY(180deg);
 }
@@ -292,6 +293,7 @@ nav {
   background: #4CAF50;
   color: #FFFFFF;
 }
+
 #consumer-filter:hover {
   background: #3D8C40;
 }
@@ -300,6 +302,7 @@ nav {
   background: #6B8E23;
   color: #FFFFFF;
 }
+
 #cultivation-filter:hover {
   background: #56721C;
 }
@@ -308,6 +311,7 @@ nav {
   background: #5DADE2;
   color: #FFFFFF;
 }
+
 #recovery-filter:hover {
   background: #4A8AB5;
 }
@@ -334,7 +338,13 @@ nav {
   padding: 10px 14px;
   border-radius: 8px;
   font-size: 1rem;
+  max-width: 180px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
+
+
 
 .filters-panel-and-cards {
   display: flex;
@@ -354,6 +364,11 @@ nav {
   position: sticky;
   top: 80px;
   align-self: flex-start;
+  max-height: calc(100vh - 100px);
+  /* tweak “100px” to match your header + padding */
+  overflow-y: auto;
+  /* enable mouse‑wheel (and swipe) scrolling */
+  overscroll-behavior-y: contain;
 }
 
 .filters-panel.active {
@@ -434,7 +449,7 @@ nav {
 }
 
 .card--article img,
-.card--study   img {
+.card--study img {
   width: 80%;
   height: auto;
   border-radius: 5%;
@@ -509,7 +524,10 @@ nav {
   text-decoration: none;
   transition: background 0.15s;
 }
-.read-more:hover { background: #374785; }
+
+.read-more:hover {
+  background: #374785;
+}
 
 .description {
   margin-top: 0;
@@ -518,19 +536,11 @@ nav {
   line-height: 1.45;
 }
 
-/* === END: Your code === */
 
-
-/* === BEGIN: Teammate’s code (FAQ section onward) === */
-
-/*
-  FAQ STYLING
-*/
-/* 
-#faq-container {
-  background-color: rgb(217, 217, 217);
-  padding-top: 50px;
-} */
+#faq-main {
+  min-height: 100vh;
+  padding-bottom: 100px;
+}
 
 #faq-section-title {
   text-align: center;
@@ -647,9 +657,21 @@ nav {
 
 #contact-container {
   display: flex;
-  gap: 30px;
-  justify-content: left;
-  margin-bottom: 30px;
+  gap: 0;
+  /* no space between the two boxes */
+  margin: 0;
+  /* no top/bottom white margin */
+  width: 100%;
+  /* fill the viewport */
+}
+
+#contact-details,
+#contact-form {
+  margin: 0;
+  /* kill those auto margins */
+  flex: 1;
+  /* each takes up half the width */
+  box-sizing: border-box;
 }
 
 #contact-users-message {
@@ -719,6 +741,11 @@ nav {
 }
 
 /* Contributors section */
+
+#contributors-main {
+  min-height: 100vh;
+}
+
 #contributors-header {
   font-size: 60px;
   text-align: center;
@@ -747,60 +774,452 @@ nav {
   border-radius: 5px;
 }
 
-/* --- Mobile overrides --- */
+
 @media (max-width: 768px) {
-  .header,
-  .branding,
-  nav,
-  .top-controls,
-  #contact-container {
-    flex-direction: column !important;
-    align-items: stretch !important;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
   }
 
-  nav {
-    width: 100%;
+  /* Prevent horizontal scroll */
+  html,
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+    width: 100% !important;
+    margin: 0;
+    padding: 0;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    padding: 8px !important;
+  }
+
+  .branding {
+    display: flex;
+    align-items: center;
     gap: 10px;
   }
 
-  .cards-grid {
-    grid-template-columns: 1fr !important;
-  }
-
-  .landing-section-text,
-  .how-to-card,
-  .faq-item,
-  #contact-users-message,
-  #contact-nameSection,
-  #contact-emailSection,
-  .contact-textfield,
-  .profile-card {
-    width: 100% !important;
-  }
-
-  #contact-heading {
-    font-size: 40px !important;
-  }
-
-  .landing-section-title,
-  #faq-section-title {
-    font-size: 30px !important;
-    text-align: center;
+  .header-logo {
+    width: 110px !important;
+    height: auto;
   }
 
   .CHH-text {
     font-size: 1.6rem !important;
+    margin: 0;
+  }
+
+  nav {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    /* Force single row */
+    gap: 4px !important;
+    padding-bottom: 4px !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    /* Allow horizontal scroll if needed */
+    justify-content: flex-start !important;
+  }
+
+  .header-cta {
+    font-size: 11px !important;
+    padding: 2px 6px !important;
+    min-width: 60px !important;
+    max-width: 80px !important;
+    text-align: center !important;
+    border-radius: 6px !important;
+    white-space: nowrap !important;
+    flex: 0 0 auto !important;
+  }
+
+
+  /* SECTION TEXT */
+  .landing-section {
+    padding: 24px 16px !important;
+  }
+
+  .landing-section-title {
+    font-size: 1.8rem !important;
+    margin: 0 0 12px !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .landing-section-text {
+    width: 90% !important;
+    max-width: none !important;
+    margin: 0 0 16px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* GO TO PORTAL BUTTON */
+  #about-cta {
+    display: inline-block !important;
+    margin: 0 auto 24px !important;
+    padding: 12px 20px !important;
+    font-size: 1rem !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+
+  /* HOW‑TO CARDS WRAPPER */
+  #how-to-cards {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 8px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+
+  .how-to-card-container {
+    width: 94vw;
+    max-width: 350px;
+    min-width: 180px;
+    height: 210px;
+    perspective: 900px;
+    margin: 0 auto;
+  }
+
+  .how-to-card-container:hover>.how-to-card {
+    cursor: pointer;
+    transform: rotateY(180deg);
+  }
+
+  .how-to-card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 800ms;
+    transform-style: preserve-3d;
+  }
+
+  .how-to-card-front,
+  .how-to-card-back {
+    box-sizing: border-box;
+    padding: 0.75rem;
+    height: 100%;
+    width: 100%;
+    border-radius: 0.65rem;
+    box-shadow: 0 0 5px 1.5px rgba(50, 50, 50, 0.15);
+    position: absolute;
+    background: white;
+    backface-visibility: hidden;
+    overflow: hidden;
+  }
+
+  /* ─── FRONT SIDE ─── */
+  .how-to-card-front {
+    background: white;
+    color: white;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .how-to-card-front h2 {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    color: #1B265F;
+    font-size: 1.04rem;
+  }
+
+  .how-to-card-front img {
+    max-width: 130vw;
+    max-height: 180px;
+    object-fit: contain;
+  }
+
+  /* ─── BACK SIDE ─── */
+  .how-to-card-back {
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background: white;
+  }
+
+  .how-to-card-title {
+    color: #1B265F;
+    font-size: 1.1rem;
+    margin: 0 0 0.4rem 0;
+    line-height: 1.2;
+  }
+
+  .how-to-card-text {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    font-size: 0.96rem;
+    line-height: 1.35;
+    word-wrap: break-word;
+  }
+
+  /* ---------- Footer ---------- */
+  .site-footer p {
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 24px 0 0;
+  }
+
+  /* ---------- Top Controls ---------- */
+
+  #portal-main {
+    display: block !important;
+  }
+
+  body {
+    overflow: visible !important;
+    /* makes sure that top controls and filters panel are able to stick to top of screen */
+  }
+
+  .top-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: white;
+  }
+
+  .top-controls .main-filter {
+    flex: 1 1 calc((100% - 16px) / 3) !important;
+    min-width: 0;
+  }
+
+  .top-controls button,
+  #sort-menu {
+    flex: 1 1 calc(50% - 8px);
+    font-size: 0.8rem;
+    padding: 8px 6px;
+    border-radius: 14px;
+    min-width: 120px;
+  }
+
+  #toggle-filters img {
+    width: 20px;
+  }
+
+  /* ---------- Filters + Cards Wrapper ---------- */
+  .filters-panel-and-cards {
+    display: flex !important;
+    gap: 12px;
+    padding: 0 12px;
+  }
+
+  /* ---------- Filters Panel ---------- */
+  .filters-panel {
+    position: sticky;
+    top: 95px;
+    z-index: 5;
+    width: 200px;
+    padding: 18px 14px;
+    border-radius: 14px;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+  }
+
+  .filters-panel h3 {
+    font-size: 1rem;
+  }
+
+  .filter-section {
+    margin-bottom: 20px;
+  }
+
+  .filters-panel label {
+    font-size: 0.9rem;
+    gap: 6px;
+  }
+
+  .filters-panel input[type="checkbox"] {
+    flex: 0 0 1em;
+    width: 1em;
+    height: 1em;
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 12px;
+  }
+
+  .card {
+    padding: 10px;
+    gap: 8px;
+    border-radius: 30px;
+  }
+
+  .card img {
+    width: 100%;
+    border-radius: 15%;
+  }
+
+  .card--article img,
+  .card--study img {
+    width: 90%;
+  }
+
+  .card h2 {
+    font-size: 0.9rem;
     text-align: center;
   }
 
-  #contact-form,
+  .description {
+    font-size: 0.75rem;
+    line-height: 1.35;
+    text-align: center;
+  }
+
+  .store-links {
+    gap: 4px;
+  }
+
+  .store-links a {
+    font-size: 0.7rem;
+    padding: 4px 6px;
+  }
+
+  .store-rating {
+    font-size: 0.7rem;
+    padding: 2px 4px;
+  }
+
+  .read-more {
+    font-size: 0.95rem !important;
+    padding: 4px 12px !important;
+  }
+
+  #faq-section-title {
+    font-size: 1.5rem;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  .faq-item {
+    width: 80%;
+    margin: 8px auto;
+  }
+
+  .faq-category {
+    max-width: 80%;
+    margin: 30px auto 8px;
+    font-size: 1.5rem;
+    padding-bottom: 4px;
+  }
+
+  .faq-question {
+    font-size: 1.1rem;
+    padding: 10px 12px;
+  }
+
+  .faq-answer {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  #contact-body {
+    font-size: 16px;
+  }
+
+  #contact-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 0px;
+  }
+
   #contact-details {
-    padding: 20px !important;
+    width: 100%;
+    padding: 20px;
   }
 
-  .top-controls button {
-    width: 100% !important;
+  #contact-form {
+    width: 100%;
+    padding: 30px 20px 100px 20px;
   }
+
+  .contact-form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .contact-form-group {
+    width: 100%;
+  }
+
+  #contact-nameSection,
+  #contact-emailSection {
+    width: 100%;
+  }
+
+  .contact-textfield {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  #contact-phoneNumber,
+  #contact-reason {
+    width: 100%;
+  }
+
+  #contact-users-message {
+    width: 100%;
+    height: 200px;
+  }
+
+  #contact-heading {
+    font-size: 32px;
+    border-bottom-width: 5px;
+  }
+
+  #contactUS-header {
+    font-size: 32px;
+  }
+
+  #contact-send-message-btn {
+    width: 100%;
+    height: 45px;
+    font-size: 16px;
+  }
+
+  #contributors-header {
+    font-size: 32px;
+    margin: 20px 0 15px;
+  }
+
+  #profile-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px 30px;
+  }
+
+  .profile-card {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
 }
-
-/* === END: Teammate’s code === */

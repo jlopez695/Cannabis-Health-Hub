@@ -1,135 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Cannabis Health Hub Landing Page</title>
-        <link rel="stylesheet" href="styles.css">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    
-    </head>
-    <body>
-        <header class="header">
-            <div class="branding">
-                <a href="https://dpi.uillinois.edu/applied-research/cannabis-research-institute/">
-                    <img class="header-logo" src="./images/dpi-cannabis-logo.png" alt="DPI cannabis research institute">
-                </a>
-                <h1 class="CHH-text">Cannabis Health Hub</h1>
+<head>
+  <title>Cannabis Health Hub Landing Page</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="branding">
+      <a href="https://dpi.uillinois.edu/applied-research/cannabis-research-institute/">
+        <img class="header-logo" src="./images/dpi-cannabis-logo.png" alt="DPI cannabis research institute">
+      </a>
+      <h1 class="CHH-text">Cannabis Health Hub</h1>
+    </div>
+    <nav>
+      <a class="header-cta" href="./index.html">Home</a>
+      <a class="header-cta" href="./portal.html">Portal</a>
+      <a class="header-cta" href="./faq.html">FAQ</a>
+      <a class="header-cta" href="./contact.html">Contact Us</a>
+      <a class="header-cta" href="./contributors.html">Contributors</a>
+    </nav>
+  </header>
+
+  <main id="landing-main">
+    <section id="about-section" class="landing-section">
+      <h1 id="about-section-title" class="landing-section-title">About Cannabis Health Hub</h1>
+      <p class="about-section-text landing-section-text">
+        The Cannabis Digital Health Information Portal is an online
+        platform designed to help users explore cannabis-related
+        digital technologies. The Portal is designed to help users
+        easily find cannabis-related mobile apps based on their
+        needs and interests. By organizing and evaluating these
+        digital tools, we aim to promote informed decision-making,
+        support responsible cannabis use, and contribute to broader
+        public health goals. As more individuals turn to mobile
+        technologies for health and lifestyle guidance, this portal
+        serves as a trusted entry point into the evolving landscape
+        of cannabis-related digital resources.
+      </p>
+      <p class="about-section-text landing-section-text">
+        In its current form, the portal features curated information
+        about cannabis-related mobile apps, based on findings from a
+        qualitative research study. Over time, it aims to grow into a
+        comprehensive resource hub where individuals can discover,
+        evaluate, and engage with a wide range of cannabis-related
+        digital tools and resources. The portal is affiliated with
+        the Cannabis Research Institute and the University of Illinois.
+      </p>
+      <a id="about-cta" href="./portal.html">Go To Portal</a>
+    </section>
+
+
+    <section id="how-to-section" class="landing-section">
+      <h1 id="how-to-section-title" class="landing-section-title">How To Use This Portal</h1>
+      <p class="how-to-section-text landing-section-text">
+        The Cannabis Digital Health Information Portal is designed
+        to help users easily find cannabis-related mobile apps based
+        on their needs and interests. Apps featured on the portal are
+        broadly categorized into three main types:
+      </p>
+      <div id="how-to-cards">
+        <!-- Recovery Card -->
+        <div class="how-to-card-container">
+          <div class="how-to-card">
+            <div class="how-to-card-front">
+              <h2>Recovery</h2>
+              <img src="./images/recovery.png">
             </div>
-            <nav>
-                <a class="header-cta" href="./index.html">Home</a>
-                <a class="header-cta" href="./portal.html">Portal</a>
-                <a class="header-cta" href="./faq.html">FAQ</a>
-                <a class="header-cta" href="./contact.html">Contact Us</a>
-                <a class="header-cta" href="./contributors.html">Contributors</a>
-            </nav>
-        </header>
-        
-        <main id="landing-main">
-            <section id="about-section" class="landing-section">
-                <h1 id="about-section-title" class="landing-section-title">About Cannabis Health Hub</h1>
-                <p class="about-section-text landing-section-text">
-                    The Cannabis Digital Health Information Portal is an online 
-                    platform designed to help users explore cannabis-related 
-                    digital technologies. The Portal is designed to help users 
-                    easily find cannabis-related mobile apps based on their 
-                    needs and interests. By organizing and evaluating these 
-                    digital tools, we aim to promote informed decision-making, 
-                    support responsible cannabis use, and contribute to broader 
-                    public health goals. As more individuals turn to mobile 
-                    technologies for health and lifestyle guidance, this portal 
-                    serves as a trusted entry point into the evolving landscape 
-                    of cannabis-related digital resources.
-                </p>
-                <p class="about-section-text landing-section-text">
-                    In its current form, the portal features curated information 
-                    about cannabis-related mobile apps, based on findings from a 
-                    qualitative research study. Over time, it aims to grow into a 
-                    comprehensive resource hub where individuals can discover, 
-                    evaluate, and engage with a wide range of cannabis-related 
-                    digital tools and resources. The portal is affiliated with 
-                    the Cannabis Research Institute and the University of Illinois.
-                </p>
-                <a id="about-cta" href="./portal.html">Go To Portal</a>
-            </section>
+            <div class="how-to-card-back">
+              <h2 class="how-to-card-title">Recovery:</h2>
+              <p class="how-to-card-text">
+                Apps that support individuals who are trying to pause,
+                reduce, or stop using cannabis.
+              </p>
+            </div>
+          </div>
+        </div>
 
+        <!-- Cultivation Card -->
+        <div class="how-to-card-container">
+          <div class="how-to-card">
+            <div class="how-to-card-front">
+              <h2>Cultivation</h2>
+              <img src="./images/cultivation.png">
+            </div>
+            <div class="how-to-card-back">
+              <h2 class="how-to-card-title">Cultivation:</h2>
+              <p class="how-to-card-text">
+                Apps that assist users in growing cannabis or recognizing
+                different cannabis plants and products.
+              </p>
+            </div>
+          </div>
+        </div>
 
-            <section id="how-to-section" class="landing-section">
-                <h1 id="how-to-section-title" class="landing-section-title">How To Use This Portal</h1>
-                <p class="how-to-section-text landing-section-text">
-                    The Cannabis Digital Health Information Portal is designed 
-                    to help users easily find cannabis-related mobile apps based 
-                    on their needs and interests. Apps featured on the portal are 
-                    broadly categorized into three main types:
-                </p>
-                <div id="how-to-cards">
-                    <!-- Recovery Card -->
-                    <div class="how-to-card-container">
-                        <div class="how-to-card">
-                            <div class="how-to-card-front">
-                                <h2>Recovery</h2>
-                                <img src="./images/recovery.png">
-                            </div>
-                            <div class="how-to-card-back">
-                                <h2 class="how-to-card-title">Recovery:</h2>
-                                <p class="how-to-card-text">
-                                    Apps that support individuals who are trying to pause, 
-                                    reduce, or stop using cannabis.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+        <!-- Consumer Card -->
+        <div class="how-to-card-container">
+          <div class="how-to-card">
+            <div class="how-to-card-front">
+              <h2>Consumer</h2>
+              <img src="./images/consumer.png">
+            </div>
+            <div class="how-to-card-back">
+              <h2 class="how-to-card-title">Consumer:</h2>
+              <p class="how-to-card-text">
+                Apps aimed at those using cannabis for entertainment,
+                wellness, or medical purposes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-                    <!-- Cultivation Card -->
-                    <div class="how-to-card-container">
-                        <div class="how-to-card">
-                            <div class="how-to-card-front">
-                                <h2>Cultivation</h2>
-                                <img src="./images/cultivation.png">
-                            </div>
-                            <div class="how-to-card-back">
-                                <h2 class="how-to-card-title">Cultivation:</h2>
-                                <p class="how-to-card-text">
-                                    Apps that assist users in growing cannabis or recognizing 
-                                    different cannabis plants and products.
-                                </p>
-                            </div>
-                        </div>
-                    </div> 
+      <p class="how-to-section-text landing-section-text">
+        Within these three categories, this portal also offers granular
+        filters to help users find more specific types of content. These
+        filters allow users to search by features such as location-based
+        dispensary information, cannabis recipes, strain databases, and
+        more—enabling a more tailored and informative experience.
+      </p>
 
-                    <!-- Consumer Card -->
-                    <div class="how-to-card-container">
-                        <div class="how-to-card">
-                            <div class="how-to-card-front">
-                                <h2>Consumer</h2>
-                                <img src="./images/consumer.png">
-                            </div>
-                            <div class="how-to-card-back">
-                                <h2 class="how-to-card-title">Consumer:</h2>
-                                <p class="how-to-card-text">
-                                    Apps aimed at those using cannabis for entertainment, 
-                                    wellness, or medical purposes.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <p>© 2025 Cannabis Health Hub. All rights reserved.</p>
+  </footer>
+</body>
 
-                <p class="how-to-section-text landing-section-text">
-                    Within these three categories, this portal also offers granular 
-                    filters to help users find more specific types of content. These 
-                    filters allow users to search by features such as location-based 
-                    dispensary information, cannabis recipes, strain databases, and 
-                    more—enabling a more tailored and informative experience.
-                </p>
-
-            </section>
-        </main>
-        <footer class="site-footer">
-            <p>© 2025 Cannabis Health Hub. All rights reserved.</p>
-        </footer>
-    </body>
 </html>

@@ -3,20 +3,33 @@
 console.clear();
 console.log('script.js loaded');
 
-/* ────────────────────────────────────────────
-   1) MAIN PORTAL LOGIC  (apps / filters grid)
-──────────────────────────────────────────── */
-document.addEventListener('DOMContentLoaded', async () => {
-  /* Bail out if this page doesn’t have cards grid */
-  const cardsGrid = document.getElementById('cards');
-  if (!cardsGrid) return;   // not on portal page
+/* -------------------------------------------------
+   MAIN LISTENERS (one per page type)
+-------------------------------------------------- */
+document.addEventListener('DOMContentLoaded', function () {
+  mainPortalLogic();     /* cards / filters / sort */
+  faqLogic();            /* FAQ accordion          */
+  contributorsLogic();   /* Contributors grid      */
+});
 
-  /* 1a) Load apps.json (+ articles & studies) */
-  let appsRaw;
+/* =================================================
+   1) PORTAL LOGIC  (apps, articles, studies)
+================================================= */
+async function mainPortalLogic() {
+  /* 1a) Make sure we are on the portal page */
+  var cardsGrid = document.getElementById('cards');
+  if (cardsGrid === null) {
+    return;   /* exit if not on portal.html */
+  }
+
+  /* 1b) Load apps.json (which also contains articles & studies) */
+  var appsRaw;
   try {
     console.log('fetching apps.json…');
-    const resp = await fetch('apps.json', { cache: 'no-store' });
-    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    var resp = await fetch('apps.json', { cache: 'no-store' });
+    if (!resp.ok) {
+      throw new Error('HTTP ' + resp.status);
+    }
     appsRaw = await resp.json();
     console.log('apps.json loaded:', appsRaw);
   } catch (err) {
@@ -26,189 +39,339 @@ document.addEventListener('DOMContentLoaded', async () => {
     return;
   }
 
-  /* 1b) Prep data */
-  const items = appsRaw.map((obj, i) => ({ ...obj, _idx: i }));
+  /* 1c) Copy data into `items` and remember original order */
+  var items = [];
+  for (var i = 0; i < appsRaw.length; i += 1) {
+    var obj = appsRaw[i];
+    obj._idx = i;   /* featured order */
+    items.push(obj);
+  }
 
-  /* 1c) Cache DOM refs for filters */
-  const panel       = document.querySelector('.filters-panel');
-  const toggleBtn   = document.getElementById('toggle-filters');
-  const sortMenu    = document.getElementById('sort-menu');
-  const mainButtons = Array.from(document.querySelectorAll('.main-filter'));
-  const allChecks   = Array.from(panel.querySelectorAll('input[type="checkbox"]'));
-  let activeMain = null;
+  /* 1d) Cache DOM references */
+  var panel = document.querySelector('.filters-panel');
+  var toggleBtn = document.getElementById('toggle-filters');
+  var sortMenu = document.getElementById('sort-menu');
+  var mainButtons = document.querySelectorAll('.main-filter');
+  var allChecks = panel.querySelectorAll('input[type="checkbox"]');
+  var activeMain = null;
 
-  /* 1d) Build a card */
+  /* 1e) Build card HTML */
   function createCardHTML(item) {
-    const extraClass =
-      item.type === 'article' ? 'card--article'
-      : item.type === 'study' ? 'card--study'
-      : 'card--app';
-
-    const isApp = item.type === 'app';
-    const badgeBlock = isApp
-      ? `
-        <div class="store-links">
-          ${item.app  ? `<a href="${item.app}"  class="app-store"  target="_blank">
-                           App Store <img src="./images/app-store-icon.png" alt="App Store">
-                         </a>` : ''}
-          ${item.play ? `<a href="${item.play}" class="play-store" target="_blank">
-                           Play Store <img src="./images/play-store-logo.jpg" alt="Play Store">
-                         </a>` : ''}
-          <span class="store-rating">${item.rating}★</span>
-        </div>`
-      : `
-        <a href="${item.url}" class="read-more" target="_blank">
-          Read ${item.type === 'study' ? 'Study' : 'Article'}
-        </a>`;
-
-    return `
-      <article class="card ${extraClass}">
-        <h2>${item.name}</h2>
-        <img src="${item.logo}" alt="${item.name} thumbnail">
-        ${badgeBlock}
-        <p class="description">${item.desc}</p>
-      </article>`;
-  }
-
-  /* 1e) Render helpers */
-  const renderCards = list =>
-    (cardsGrid.innerHTML = list.map(createCardHTML).join(''));
-
-  function applyFiltersAndSort() {
-    /* read checkbox filters */
-    let typeChecks = [], genreChecks = [], subChecks = [];
-    panel.querySelectorAll('.filter-section').forEach(sec => {
-      const heading = sec.querySelector('h3').textContent.trim().toLowerCase();
-      const checked = Array.from(sec.querySelectorAll('input:checked'))
-        .map(cb => cb.parentElement.textContent.trim().toLowerCase());
-      if (heading === 'type')      typeChecks = checked;
-      else if (heading === 'genre') genreChecks = checked;
-      else                          subChecks  = checked;
-    });
-
-    /* filter */
-    const view = items.filter(it => {
-      const mainOK  = !activeMain || it.main === activeMain;
-      const typeOK  = !typeChecks.length  || typeChecks.includes(it.type.toLowerCase());
-      const genreOK = !genreChecks.length || genreChecks.includes(it.genre.toLowerCase());
-      const subsOK  = !subChecks.length   ||
-                      subChecks.some(s => it.subs.map(x=>x.toLowerCase()).includes(s));
-      return mainOK && typeOK && genreOK && subsOK;
-    });
-
-    /* sort */
-    switch (sortMenu.value) {
-      case 'name':
-        view.sort((a,b) => a.name.localeCompare(b.name));           break;
-      case 'rating':
-        view.sort((a,b) => (b.rating ?? 0) - (a.rating ?? 0) ||
-                           a.name.localeCompare(b.name));           break;
-      case 'reviews':
-        view.sort((a,b) => (b.reviews ?? 0) - (a.reviews ?? 0) ||
-                           a.name.localeCompare(b.name));           break;
-      default: view.sort((a,b) => a._idx - b._idx);
+    /* type‑based class */
+    var extraClass = 'card--app';
+    if (item.type === 'article') {
+      extraClass = 'card--article';
+    } else if (item.type === 'study') {
+      extraClass = 'card--study';
     }
-    renderCards(view);
+
+    /* badge block */
+    var badgeBlock = '';
+    if (item.type === 'app') {
+      badgeBlock = '<div class="store-links">';
+      if (item.app) {
+        badgeBlock +=
+          '<a href="' + item.app + '" class="app-store" target="_blank">' +
+          'App Store <img src="./images/app-store-icon.png" alt="App Store">' +
+          '</a>';
+      }
+      if (item.play) {
+        badgeBlock +=
+          '<a href="' + item.play + '" class="play-store" target="_blank">' +
+          'Play Store <img src="./images/play-store-logo.jpg" alt="Play Store">' +
+          '</a>';
+      }
+      badgeBlock +=
+        '<span class="store-rating">' + (item.rating || '') + '★</span>' +
+        '</div>';
+    } else {
+      var linkText = 'Read Article';
+      if (item.type === 'study') {
+        linkText = 'Read Study';
+      }
+      badgeBlock =
+        '<a href="' + item.url + '" class="read-more" target="_blank">' +
+        linkText +
+        '</a>';
+    }
+
+    /* assemble */
+    var html = '<article class="card ' + extraClass + '">';
+    html += '<h2>' + item.name + '</h2>';
+    html += '<img src="' + item.logo + '" alt="' + item.name + ' thumbnail">';
+    html += badgeBlock;
+    html += '<p class="description">' + item.desc + '</p>';
+    html += '</article>';
+    return html;
   }
 
-  /* 1f) Wire up UI */
-  toggleBtn.addEventListener('click', () => {
-    const open = panel.classList.toggle('active');
-    toggleBtn.firstChild.textContent = open ? 'Hide Filters' : 'Show Filters';
-  });
+  /* 1f) Render helper */
+  function renderCards(list) {
+    var out = '';
+    for (var i = 0; i < list.length; i += 1) {
+      out += createCardHTML(list[i]);
+    }
+    cardsGrid.innerHTML = out;
+  }
 
-  panel.querySelectorAll('.filter-section h3').forEach(h3 =>
-    h3.addEventListener('click', () =>
-      h3.parentElement.classList.toggle('collapsed')
-    )
-  );
+  /* 1g) Filtering + sorting */
+  function applyFiltersAndSort() {
+    /* Read check‑box filter selections */
+    var typeChecks = [];
+    var genreChecks = [];
+    var subChecks = [];
 
-  mainButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const wasActive = btn.classList.contains('active');
-      mainButtons.forEach(b => b.classList.remove('active'));
-      activeMain = null;
-      if (!wasActive) {
-        btn.classList.add('active');
-        activeMain = btn.textContent.trim().toLowerCase();
+    var sections = panel.querySelectorAll('.filter-section');
+    for (var s = 0; s < sections.length; s += 1) {
+      var sec = sections[s];
+      var heading = sec.querySelector('h3').textContent.toLowerCase().trim();
+      var checked = sec.querySelectorAll('input:checked');
+      var labels = [];
+
+      for (var c = 0; c < checked.length; c += 1) {
+        var txt = checked[c].parentElement.textContent.toLowerCase().trim();
+        labels.push(txt);
       }
-      applyFiltersAndSort();
-    });
-  });
 
-  allChecks.forEach(cb => cb.addEventListener('change', applyFiltersAndSort));
-  sortMenu.addEventListener('change', applyFiltersAndSort);
+      if (heading === 'type') {
+        typeChecks = labels;
+      } else if (heading === 'genre') {
+        genreChecks = labels;
+      } else {
+        subChecks = labels;
+      }
+    }
 
-  /* 1g) Initial render */
-  applyFiltersAndSort();
-});
+    /* Filter the data set */
+    var view = [];
+    for (var i = 0; i < items.length; i += 1) {
+      var it = items[i];
 
-/* ────────────────────────────────────────────
-   2) FAQ PAGE LOGIC
-──────────────────────────────────────────── */
-document.addEventListener('DOMContentLoaded', async () => {
-  const container = document.getElementById('faq-container');
-  if (!container) return;   // not on FAQ page
+      var mainOK = (activeMain === null) || (it.main === activeMain);
+      var typeOK = (typeChecks.length === 0) || (typeChecks.indexOf(it.type.toLowerCase()) !== -1);
+      var genreOK = (genreChecks.length === 0) || (genreChecks.indexOf(it.genre.toLowerCase()) !== -1);
 
-  try {
-    const res  = await fetch('faq.json', { cache: 'no-store' });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const faqs = await res.json();
+      var subsOK = false;
+      if (subChecks.length === 0) {
+        subsOK = true;
+      } else {
+        for (var x = 0; x < it.subs.length; x += 1) {
+          if (subChecks.indexOf(it.subs[x].toLowerCase()) !== -1) {
+            subsOK = true;
+            break;
+          }
+        }
+      }
 
-    /* group & render */
-    const grouped = {};
-    faqs.forEach(f => (grouped[f.category] ??= []).push(f));
+      if (mainOK && typeOK && genreOK && subsOK) {
+        view.push(it);
+      }
+    }
 
-    for (const cat in grouped) {
-      container.insertAdjacentHTML('beforeend',
-        `<h2 class="faq-category">${cat}</h2>`);
+    /* Sort (and, where required, narrow the list) */
+    if (sortMenu.value === 'name') {
+      /* A → Z for everything */
+      view.sort(function (a, b) {
+        return a.name.localeCompare(b.name);
+      });
 
-      grouped[cat].forEach(faq => {
-        container.insertAdjacentHTML('beforeend', `
-          <div class="faq-item">
-            <button class="faq-question">
-              ${faq.question} <span class="faq-arrow">▼</span>
-            </button>
-            <div class="faq-answer"><p class="faq-p">${faq.answer}</p></div>
-          </div>`);
+    } else if (sortMenu.value === 'rating') {
+      /* Highest rated – apps only */
+      var onlyApps = [];
+      for (var r = 0; r < view.length; r += 1) {
+        if (view[r].type === 'app') {
+          onlyApps.push(view[r]);
+        }
+      }
+      onlyApps.sort(function (a, b) {
+        var diff = (b.rating || 0) - (a.rating || 0);
+        if (diff !== 0) { return diff; }
+        return a.name.localeCompare(b.name);
+      });
+      view = onlyApps;
+
+    } else if (sortMenu.value === 'reviews') {
+      /* Most reviewed – apps only */
+      var appsList = [];
+      for (var mv = 0; mv < view.length; mv += 1) {
+        if (view[mv].type === 'app') {
+          appsList.push(view[mv]);
+        }
+      }
+      appsList.sort(function (a, b) {
+        var diff = (b.reviews || 0) - (a.reviews || 0);
+        if (diff !== 0) { return diff; }
+        return a.name.localeCompare(b.name);
+      });
+      view = appsList;
+
+    } else if (sortMenu.value === 'date') {
+      /* Most recent – articles & studies only */
+      var papers = [];
+      for (var pd = 0; pd < view.length; pd += 1) {
+        if (view[pd].type === 'article' || view[pd].type === 'study') {
+          papers.push(view[pd]);
+        }
+      }
+      papers.sort(function (a, b) {
+        var da = (a.publicationDate) ? new Date(a.publicationDate) : new Date(0);
+        var db = (b.publicationDate) ? new Date(b.publicationDate) : new Date(0);
+        var diff = db - da;   /* newest first */
+        if (diff !== 0) { return diff; }
+        return a._idx - b._idx; /* tie‑break */
+      });
+      view = papers;
+
+    } else {
+      /* Featured – original JSON order */
+      view.sort(function (a, b) {
+        return a._idx - b._idx;
       });
     }
 
-    /* toggle answers */
-    container.addEventListener('click', e => {
-      if (e.target.closest('.faq-question')) {
-        e.target.closest('.faq-item').classList.toggle('open');
+    /* Render */
+    renderCards(view);
+  }
+
+  /* 1h) Wire up UI controls */
+  toggleBtn.addEventListener('click', function () {
+    var open = panel.classList.toggle('active');
+    if (open) {
+      toggleBtn.firstChild.textContent = 'Hide Filters';
+    } else {
+      toggleBtn.firstChild.textContent = 'Show Filters';
+    }
+  });
+
+  var h3s = panel.querySelectorAll('.filter-section h3');
+  for (var h = 0; h < h3s.length; h += 1) {
+    (function (hdr) {
+      hdr.addEventListener('click', function () {
+        hdr.parentElement.classList.toggle('collapsed');
+      });
+    })(h3s[h]);
+  }
+
+  for (var mb = 0; mb < mainButtons.length; mb += 1) {
+    (function (btn) {
+      btn.addEventListener('click', function () {
+        var already = btn.classList.contains('active');
+        for (var k = 0; k < mainButtons.length; k += 1) {
+          mainButtons[k].classList.remove('active');
+        }
+        activeMain = null;
+        if (!already) {
+          btn.classList.add('active');
+          activeMain = btn.textContent.toLowerCase().trim();
+        }
+        applyFiltersAndSort();
+      });
+    })(mainButtons[mb]);
+  }
+
+  for (var ac = 0; ac < allChecks.length; ac += 1) {
+    allChecks[ac].addEventListener('change', applyFiltersAndSort);
+  }
+  sortMenu.addEventListener('change', applyFiltersAndSort);
+
+  /* 1i) First render */
+  applyFiltersAndSort();
+}
+
+/* =================================================
+   2) FAQ PAGE LOGIC
+================================================= */
+function faqLogic() {
+  var container = document.getElementById('faq-container');
+  if (container === null) {
+    return;  /* not on FAQ.html */
+  }
+
+  fetch('faq.json', { cache: 'no-store' })
+    .then(function (res) {
+      if (!res.ok) {
+        throw new Error('HTTP ' + res.status);
       }
-    });
-  } catch (err) {
-    console.error('failed to load faq.json:', err);
-  }
-});
+      return res.json();
+    })
+    .then(function (faqs) {
+      /* group by category */
+      var grouped = {};
+      for (var i = 0; i < faqs.length; i += 1) {
+        var f = faqs[i];
+        if (!grouped[f.category]) {
+          grouped[f.category] = [];
+        }
+        grouped[f.category].push(f);
+      }
 
-/* ────────────────────────────────────────────
+      /* render */
+      for (var cat in grouped) {
+        container.insertAdjacentHTML('beforeend',
+          '<h2 class="faq-category">' + cat + '</h2>');
+
+        var arr = grouped[cat];
+        for (var j = 0; j < arr.length; j += 1) {
+          var faq = arr[j];
+          var block = '<div class="faq-item">';
+          block += '<button class="faq-question">' +
+            faq.question +
+            ' <span class="faq-arrow">▼</span>' +
+            '</button>';
+          block += '<div class="faq-answer"><p class="faq-p">' +
+            faq.answer +
+            '</p></div>';
+          block += '</div>';
+          container.insertAdjacentHTML('beforeend', block);
+        }
+      }
+
+      container.addEventListener('click', function (e) {
+        var btn = e.target.closest('.faq-question');
+        if (btn) {
+          btn.closest('.faq-item').classList.toggle('open');
+        }
+      });
+    })
+    .catch(function (err) {
+      console.error('failed to load faq.json:', err);
+    });
+}
+
+/* =================================================
    3) CONTRIBUTORS PAGE LOGIC
-──────────────────────────────────────────── */
-document.addEventListener('DOMContentLoaded', async () => {
-  const container = document.getElementById('profile-container');
-  if (!container) return;   // not on Contributors page
-
-  try {
-    const res = await fetch('contributors.json', { cache: 'no-store' });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const profiles = await res.json();
-
-    profiles.forEach(p => {
-      container.insertAdjacentHTML('beforeend', `
-        <div class="profile-card">
-          <img src="${p.image}" alt="${p.name}" class="profile-img">
-          <h3>${p.name}</h3>
-          <p>${p.title}</p>
-          <p>Email: <a href="mailto:${p.email}">${p.email}</a></p>
-          ${p.phone ? `<p>Phone: ${p.phone}</p>` : ''}
-        </div>`);
-    });
-  } catch (error) {
-    console.error('Error loading contributor data:', error);
+================================================= */
+function contributorsLogic() {
+  var container = document.getElementById('profile-container');
+  if (container === null) {
+    return;  /* not on contributors.html */
   }
-});
+
+  fetch('contributors.json', { cache: 'no-store' })
+    .then(function (res) {
+      if (!res.ok) {
+        throw new Error('HTTP ' + res.status);
+      }
+      return res.json();
+    })
+    .then(function (profiles) {
+      for (var i = 0; i < profiles.length; i += 1) {
+        var p = profiles[i];
+        var html = '<div class="profile-card">';
+        html += '<img src="' + p.image + '" alt="' + p.name + '" class="profile-img">';
+        html += '<h3>' + p.name + '</h3>';
+        html += '<p>' + p.title + '</p>';
+        html += '<p>Email: <a href="mailto:' + p.email + '">' + p.email + '</a></p>';
+        if (p.phone) {
+          html += '<p>Phone: ' + p.phone + '</p>';
+        }
+        html += '</div>';
+        container.insertAdjacentHTML('beforeend', html);
+      }
+    })
+    .catch(function (error) {
+      console.error('Error loading contributor data:', error);
+    });
+}
+
 /* ──────────────── end script.js ──────────────── */
