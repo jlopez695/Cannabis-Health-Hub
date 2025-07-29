@@ -87,7 +87,7 @@
     "logo": "./images/affect-app-logo.webp",
     "play": "https://play.google.com/store/apps/details?id=com.unlogical.jane&hl=en_US",
     "app": "https://apps.apple.com/us/app/affect-addiction-recovery/id1582444280",
-    "desc": "Affect: Addiction Recovery is a smartphone-based telehealth app offering a structured outpatient program for alcohol and drug use, including cannabis, opioids, stimulants, and prescription medications. It features counseling via secure video, medication support, behavioral tracking, contingency‑management rewards, and access to peer and group resources. Private, insurance‑covered, and clinically accredited."
+    "desc": "Affect: Addiction Recovery is a smartphone-based telehealth app offering a structured outpatient program for alcohol and drug use, including cannabis, opioids, stimulants, and prescription medications. It features counseling via secure video, medication support, behavioral tracking, contingency-management rewards, and access to peer and group resources. Private, insurance-covered, and clinically accredited."
   },
   {
     "name": "Curaleaf",
@@ -396,5 +396,113 @@
     "url": "https://www.cdc.gov/mmwr/volumes/74/wr/mm7412a1.htm",
     "desc": "Survey 138,625 adults across 22 states and two territories in 2022 to map cannabis consumption methods, showing 79% smoked, 42% ate edibles, 30% vaped, 15% dabbed, and half used multiple routes, with vaping and dabbing highest among 18-24 year olds.",
     "publicationDate": "2025-04-10"
+  },
+  {
+    "name": "Article: Guidance on Home Cultivation (Virginia)",
+    "main": "cultivation",
+    "type": "article",
+    "genre": "lifestyle",
+    "subs": [
+      "Law Info",
+      "Health/Medical Info"
+    ],
+    "logo": "./images/virginia-cca-logo.webp",
+    "url": "https://cca.virginia.gov/resources/homecultivation#:~:text=Limited%20home%20cultivation%20is%20legal,for%20personal%20use",
+    "desc": "handbook from the Virginia Cannabis Control Authority outlining the four-plant household limit, required plant tags, renter restrictions, and four key safety areas—poisoning, space/mold, electrical-fire, and UV-light risks—to help residents grow cannabis at home legally and responsibly.",
+    "publicationDate": "2024-03-26"
+  },
+  {
+    "name": "Article: Home Cultivation Is Now Legal in New York State",
+    "main": "cultivation",
+    "type": "article",
+    "genre": "Lifestyle",
+    "subs": [
+      "Law Info",
+      "Health/Medical Info"
+    ],
+    "logo": "./images/ny-ocm-logo.jpg",
+    "url": "https://cannabis.ny.gov/system/files/documents/2024/07/homecultivationoverview.pdf#:~:text=Cannabis%20can%20be%20grown%20in,informed%20or%20call%20local%20entities",
+    "desc": "Office of Cannabis Management flyer explaining New Yorkers' new right to grow up to six cannabis plants per residence (three mature, three immature), caregiver rules for medical patients, possession limits, and safety tips covering fire hazards, odor control, pesticides, and secure storage.",
+    "publicationDate": "2023-01-01"
+  },
+  {
+    "name": "Article: Cannabis Health Effects (CDC)",
+    "main": "recovery",
+    "type": "article",
+    "genre": "health",
+    "subs": [
+      "Health/Medical Info"
+    ],
+    "logo": "./images/cdc.webp",
+    "url": "https://www.cdc.gov/marijuana/health-effects/index.html",
+    "desc": "CDC overview of how cannabis use can affect brain, heart, lungs, mental health, driving ability, and poisoning risk, with links to detailed pages and prevention tips.",
+    "publicationDate": "2024-02-16"
+  },
+  {
+    "name": "Article: How to Read an Adult-Use Cannabis Label (New York)",
+    "main": "consumer",
+    "type": "article",
+    "genre": "Health & Fitness",
+    "subs": [
+      "Health/Medical Info",
+      "Product Info/Strain Library"
+    ],
+    "logo": "./images/ny-ocm-logo.jpg",
+    "url": "https://cannabis.ny.gov/system/files/documents/2023/04/ocm_how-to-read-a-cannabis-product-label.pdf#:~:text=%E2%80%A2%20Different%20products%20have%20different,will%20typically%20list%20the%20cultivar",
+    "desc": "NYS Office of Cannabis Management one-pager that walks consumers through THC/CBD potency numbers, universal THC symbol, warning language, QR‑code lab tests, storage tips, and poison‑center info so they can buy and use adult‑use products safely.",
+    "publicationDate": "2022-01-01"
+  },
+  {
+    "name": "Article: Cannabis Use Disorder (Virginia)",
+    "main": "recovery",
+    "type": "article",
+    "genre": "Medical",
+    "subs": [
+      "Health/Medical Info",
+      "Community"
+    ],
+    "logo": "./images/virginia-cca-logo.webp",
+    "url": "https://cca.virginia.gov/resources/usedisorder",
+    "desc": "CCA explainer of cannabis use disorder symptoms, withdrawal signs, step-down strategies, and state/national treatment & support groups.",
+    "publicationDate": "2022-01-01"
+  },
+  {
+    "name": "Article: Know the Risks of Marijuana (SAMHSA)",
+    "main": "recovery",
+    "type": "article",
+    "genre": "health",
+    "subs": [
+      "Health/Medical Info"
+    ],
+    "logo": "./images/samhsa-logo.png",
+    "url": "https://www.samhsa.gov/marijuana",
+    "desc": "SAMHSA explainer outlining addiction rates, brain and mental-health impacts, pregnancy risks, driving impairment, and other long-term effects of marijuana use, plus helplines and treatment links.",
+    "publicationDate": "2024-11-07"
+  },
+  {
+    "name": "Article: Cannabis and Teens (CDC)",
+    "main": "recovery",
+    "type": "article",
+    "genre": "health",
+    "subs": [
+      "Health/Medical Info"
+    ],
+    "logo": "./images/cdc.webp",
+    "url": "https://www.cdc.gov/marijuana/health-effects/teens.html",
+    "desc": "CDC summary of teen cannabis use statistics, brain-development risks, academic and mental-health impacts, addiction potential, and tips for parents and youth.",
+    "publicationDate": "2024-02-15"
+  },
+  {
+    "name": "Article: Marijuana and Pregnancy (SAMHSA)",
+    "main": "consumer",
+    "type": "article",
+    "genre": "health",
+    "subs": [
+      "Health/Medical Info"
+    ],
+    "logo": "./images/samhsa-logo.png",
+    "url": "https://www.samhsa.gov/marijuana/marijuana-and-pregnancy",
+    "desc": "SAMHSA fact sheet warning that no amount of marijuana is safe during pregnancy or breastfeeding, outlining risks like stillbirth, preterm birth, low birth-weight, and long-term brain-development issues, plus helplines for quitting.",
+    "publicationDate": "2024-11-07"
   }
 ]
