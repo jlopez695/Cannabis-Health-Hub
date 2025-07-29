@@ -229,7 +229,6 @@ async function mainPortalLogic() {
       });
     }
 
-    /* Render */
     renderCards(view);
   }
 
@@ -284,7 +283,7 @@ async function mainPortalLogic() {
 function faqLogic() {
   var container = document.getElementById('faq-container');
   if (container === null) {
-    return;  /* not on FAQ.html */
+    return;
   }
 
   fetch('faq.json', { cache: 'no-store' })
@@ -344,7 +343,7 @@ function faqLogic() {
 function contributorsLogic() {
   var container = document.getElementById('profile-container');
   if (container === null) {
-    return;  /* not on contributors.html */
+    return;
   }
 
   fetch('contributors.json', { cache: 'no-store' })
