@@ -2,9 +2,8 @@
   {
     "name": "Yuanye Ma",
     "title": "Senior Research Associate",
-    "email": "person@placeholder.edu",
-    "phone": "555-555-5555",
-    "image": "./images/profilePic.png"
+    "email": "yuanyem@uillinois.edu",
+    "image": "./images/yuanyemaheadshot.jpg"
   },
   {
     "name": "Jacob Lopez",
@@ -15,7 +14,7 @@
   {
     "name": "Joshua Olmos",
     "title": "Developer",
-    "email": "person@placeholder.edu",
-    "image": "./images/profilePic.png"
+    "email": "jolmo2@illinois.edu",
+    "image": "./images/joshuaolmos.jpg"
   }
 ]
